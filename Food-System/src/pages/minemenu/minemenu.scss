@@ -1,0 +1,116 @@
+
+.containerview-minemenu{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+}
+
+ 
+.listmenuconent{
+    overflow-y: scroll;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 160px;
+    padding-top: 20px;
+    background-color: #f2f2f2;
+    
+}
+.menulist{
+    width: 96%;
+    margin: 2% auto;
+    padding: 0px;
+    //height: 100%;
+    margin-bottom: 320px;
+}
+.menuconent{
+    width: 96%;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 20px 2%;
+    height: 156px;
+    margin-bottom: 20px;
+}
+.menuconent-onerow{
+    width: 100%;
+     float: left;
+     height: 53px;
+}
+.datetime{
+    width: 66%;
+    float: left;
+    text-align: left;
+    font-size: 38px;
+    height: 53px;
+    padding-left: 4%;
+}
+.orderstatus{
+    width: 30%;
+    float: left;
+    height: 53px;
+}
+.orderstatus-ico{
+    width: 40%;
+    float: left;
+    font-size: 38px;
+    color: #11ce68;
+    height: 43px;
+    padding-top: 10px;
+    text-align: center
+}
+.orderstatus-text{
+    width: 60%;
+    float: left;
+    height: 49px;
+    font-size: 30px;
+    padding-top: 4px;
+}
+
+.menuconent-tworow{
+
+    width: 100%;
+     float: left;
+     height: 53px;
+     margin-top: 30px;
+}
+
+.wheremeal{
+    width: 66%;
+    float: left;
+    text-align: left;
+    font-size: 38px;
+    height: 53px;
+    padding-left: 4%;
+}
+.meal-icon{
+    width: 20%;
+    height: 53px;
+    float: left;
+}
+.icon-image{
+    width: 40px;
+    height: 40px;
+}
+.wheremeal-name{
+    width: 80%;
+    float: left;
+    font-size: 32px;
+    color: #6f6f6f
+}
+
+.totalmoney{
+    width: 25%;
+    float: left;
+    text-align: right;
+    font-size: 33px;
+    padding-right: 5%;
+    color: #fb5554;
+}

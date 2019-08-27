@@ -1,0 +1,64 @@
+.container-notice{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+}
+
+.notice-content{
+    margin-top:160px;
+    width: 94%;
+    margin:  160px auto 0px auto;
+   
+}
+.at-list__item{
+    padding: 25px 0px;
+    font-size: 33px;
+}
+
+.at-list__item .item-content__info-note{
+    font-size: 9px;
+}
+.at-list__item .item-extra__icon-arrow{
+    font-size: 58px;
+}
+
+// .at-list__item .item-extra__info{
+//     font-size: 30px;
+//     text-align: right;
+//     padding-right: 0px;
+// }
+
+.at-list__item-content{
+    margin-right: -400px
+}
+.at-list__item::after{
+    border: 0;
+}
+.at-list__item{
+  border-bottom: 1px solid #eeeeee
+}
+
+.tipview{
+    width: 100%;
+    float: left;
+    margin-top:60px;
+}
+.tipicon{
+    font-size: 30px;
+     float: left;
+     padding-top: 4px;
+}
+.tiptltle{
+    float: left;
+    font-size: 26px;
+    margin-left: 8px;
+    color: #b9b9b9;
+}

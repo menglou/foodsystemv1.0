@@ -1,0 +1,88 @@
+.topnav-component{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 800;
+    width: 100%;
+  
+}
+.content-component{
+width: 100%;
+height: 160px;
+background-color: #fb5554;
+margin: 0px auto;
+padding: 0px;
+text-align: left;
+}
+.nagator-component{
+width: 100%;
+float: left;
+height: 160px;
+
+}
+.daohanwrrow-component{
+width: 42%;
+float: left;
+height: 135px;
+color: #fff;
+font-size: 70px;
+padding-top: 25px;
+padding-left: 3%
+
+}
+.nagatortitle-component{
+width: 55%;
+float: left;
+height: 105px;
+text-align: left;
+font-size: 38px;
+color: #fff;
+padding-top: 55px
+}
+
+
+.nagator-didden{
+    display: none
+}
+
+.day-view{
+ width: 100%;
+ float: left;
+ height: 82px;
+ background-color: #fb5554;
+ padding-top: 8px; 
+}
+.day-view-hidden{
+    display: none
+}
+
+.day-view-content{
+    width: 92%;
+    padding-left: 4%;
+    padding-right: 4%;
+    float: left;
+}
+.day-date-view{
+    width: 70%;
+    float: left;
+}
+.day-date{
+    width: 60%;
+    float: left;
+    font-size: 33px;
+    color: #fff;
+}
+.mealtype{
+    width: 40%;
+    float: left;
+    font-size: 33px;
+    color: #fff;
+}
+.order-status{
+    width: 30%;
+    float: left;
+    font-size: 36px;
+    color: #fff;
+    text-align: right
+}

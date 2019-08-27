@@ -1,0 +1,160 @@
+.containerview-detail{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+     
+}
+
+.meal-deatil{
+    width: 100%;
+    height: 1200px;
+    overflow-y: scroll;
+    position: absolute;
+    margin-top: 242px;
+    padding-top: 20px;
+    
+}
+.meal-deatil-content{
+    width: 92%;
+    padding-left: 4%;
+    padding-right: 4%;
+    margin: 0 auto
+}
+
+.meal-info{
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid #e9e9e9;
+    height: 130px;
+    
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.meal-info-left{
+    width: 70%;
+    float: left;
+    height: 130px;
+}
+
+.meal-image-view{
+    width: 120px;
+    height: 120px;
+     float: left;
+     padding-top: 2.5px;
+}
+.meal-image{
+    width: 120px;
+    height: 120px;
+}
+
+.meal-name-view{
+    width: 150px;
+    font-size: 40px;
+    float: left;
+    height: 99px;
+    text-align: center;
+    padding-top: 31px
+}
+.meal-count-view{
+    width: 100px;
+    float: right;
+    text-align: right;
+    font-size: 40px;
+    height: 99px;
+    padding-top: 31px
+}
+
+.meal-info-right{
+    width: 30%;
+    float: left;
+    text-align: right;
+    font-size: 40px;
+    height: 99px;
+    padding-top: 31px
+}
+
+
+
+.order-total-money-view{
+ 
+    height: 100px;
+    float: left;
+    padding-top: 50px;
+    width: 100%;
+    margin-bottom: 8.26667rem;
+}
+
+.order-total-money-text{
+    width:85%;
+    float: left;
+    text-align: right;
+    font-size: 38px;
+  
+}
+.order-total-money-cont{
+    width:15%;
+    float: left;
+    text-align: right;
+    font-size: 38px;
+}
+
+
+
+
+.order-detail-footer{
+    position: absolute;
+    z-index: 500px;
+    bottom:0;
+    left: 0;
+    width: 100%;
+}
+.footer-fun{
+    width: 100%;
+    margin:  0 auto;
+    background-color: #fafafa;
+    height: 185px;
+    border-top: 1px solid #e5e5e5 
+}
+.undo-order{
+    width: 50%;
+    float: left;
+    border-right: 1px solid #e5e5e5;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 185px;
+    text-align: center;
+    .undo-order-btn{
+        width: 100%;
+        border: 0px;
+        height: 135px;
+        font-size: 45px;
+        padding-top: 50px
+    }
+}
+
+.edit-order{
+    width: 50%;
+    float: left;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 185px;
+    text-align: center;
+    color: #fb6c6b;
+    .edit-order-btn{
+        width: 100%;
+        border: 0px;
+        font-size: 45px;
+        height: 135px;
+        padding-top: 50px
+    }
+
+}
