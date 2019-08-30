@@ -10,11 +10,6 @@ import gonggao from '../../asset/image/gonggao.png';
 
 import TopNav from "../../components/topnav/topnav";
 
-import foodlist from "../../components/foodlist/foodlist";
-import getNextPreDate from "../../util/getdate";
-
-const date = getNextPreDate(new Date());
-const foodlists = foodlist;
 
 const tabList = [{ title: '早餐' }, { title: '中餐' }, { title: '晚餐' }];
 
@@ -25,21 +20,9 @@ export default class Index extends Component {
   };
   constructor(props) {
     super(props);
-    this.state = {
-      current: 0,
-      data: date,
-      nochangedate: new Date().toLocaleDateString(),
-      foodforlist: foodlists, //菜品列表
-      isdiaplaymealfood: false, //控制是否显示饱餐导航
-      foodcount: 0, //总数量
-      totalmoney: 0.0, //总价钱
-      floatisOpened: false //悬窗是否显示
-    };
   }
 
-  componentWillMount() {
-    Taro.pxTransform(86);
-  }
+  componentWillMount() {}
 
   componentDidMount() {}
 
@@ -47,28 +30,32 @@ export default class Index extends Component {
 
   componentDidShow() {}
 
-  componentDidHide() {
-    Taro.re;
-  }
+  componentDidHide() {}
 
   onNavigatoOrderfood = () => {
-    Taro.navigateTo({
-      url: "../orderfood/orderfood"
+    Taro.redirectTo({
+      url: "../orderfood/orderfood" //跳转到报餐页面  0//代表是tabbar切换到这个页面的  1//代表不是tabbar切换到这个页面的 
     });
   };
   onRedircto = () => {
-    Taro.navigateTo({
-      url: "../rules/rules"
+    Taro.redirectTo({
+      url: "../rules/rules" //跳转到规则页面  0//代表是tabbar切换到这个页面的  1//代表不是tabbar切换到这个页面的 
     });
   };
   onredirectomymenu = () => {
-    Taro.navigateTo({
-      url: "../minemenu/minemenu"
+    Taro.redirectTo({
+      url: "../minemenu/minemenu" //跳转到我的菜单页面  0//代表是tabbar切换到这个页面的  1//代表不是tabbar切换到这个页面的 
     });
   };
   onredirecttonotice = () => {
-    Taro.navigateTo({
-      url: "../notice/notice"
+    Taro.redirectTo({
+      url: "../notice/notice" //跳转到公告  0//代表是tabbar切换到这个页面的  1//代表不是tabbar切换到这个页面的 
+    });
+  };
+
+  onredirecttomine = () => {
+    Taro.redirectTo({
+      url: "../mine/mine"
     });
   };
 
@@ -90,17 +77,18 @@ export default class Index extends Component {
                                 <Image className="rules" src={rules}></Image>
                              </View>
                         </View>
-                        <View className="nextrow-two" onClick={this.onredirecttonotice}>
-                             <View className="nextrow-two-imae1">
+                        <View className="nextrow-two">
+                             <View className="nextrow-two-imae1" onClick={this.onredirecttonotice}>
                                 <Image className="gonggao" src={gonggao}></Image>
                              </View>
-                             <View className="nextrow-two-imae2">
+                             <View className="nextrow-two-imae2" onClick={this.onredirecttomine}>
                                 <Image className="mine" src={mine}></Image>
                              </View>
                         </View>
                    </View>
                </View>
           </View>
+          
       </View>;
   }
 }

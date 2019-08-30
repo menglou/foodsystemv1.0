@@ -5,7 +5,7 @@ import zaocan from "../../asset/image/zaocan.png"
 import wucan from "../../asset/image/wancan.png"
 import wancan from "../../asset/image/wancan.png"
 
-
+import TabBar from '../../components/tabbar/tabbar'
 import TopNav from "../../components/topnav/topnav"
 
 export default class MineMenu extends Component{
@@ -15,16 +15,17 @@ export default class MineMenu extends Component{
 
     constructor(props){
         super(props)
+       
     }
 
     componentWillMount () { 
-        
+      
       }
     
       componentDidMount () { }
     
       componentWillUnmount () {
-        
+           
        }
     
       componentDidShow () { }
@@ -34,15 +35,15 @@ export default class MineMenu extends Component{
        }
 
        onSeeMeilDetail=()=>{
-             Taro.redirectTo({
+             Taro.navigateTo({
                    url:"../orderdetail/orderdetail"
-             })
+             });
        }
 
     render(){
         return(
             <View className="containerview-minemenu">
-                <TopNav title="我的菜单" isdisplaynagator={true} isdisplaydaydate={false} navigatetourl="../index/index"></TopNav>
+                <TopNav title="我的菜单" isdisplaydaydate={false}  isdisplaynagator={false}></TopNav>
 
                 <View className="listmenuconent">
                     <View className="menulist">
@@ -301,6 +302,7 @@ export default class MineMenu extends Component{
                         </View>
                     </View>
                 </View>
+              
             </View>
         )
     }

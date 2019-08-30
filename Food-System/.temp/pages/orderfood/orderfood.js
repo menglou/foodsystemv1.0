@@ -34,6 +34,7 @@ export default class OrderFood extends Component {
   }
 
   componentWillMount() {
+
     //初始化数据
     selectfoodlistparam.splice(0, selectfoodlistparam.length);
     var inistafoodforlist = this.state.foodforlist;
@@ -461,7 +462,7 @@ export default class OrderFood extends Component {
   render() {
     return <View className="containerview">
 
-          <View className="topnav">
+             <View className="topnav">
                 <View className="content">
                   <View className="nagator">
                       <View className="daohanwrrow">
@@ -504,7 +505,7 @@ export default class OrderFood extends Component {
          
            
 
-          <View className="tabview">
+             <View className="tabview">
             <AtTabs current={this.state.current} tabList={tabList} onClick={this.changeTab.bind(this)}>
                   <AtTabsPane current={this.state.current} index={0}>
                       {this.state.foodforlist.map((food, i) => <View>
@@ -545,7 +546,7 @@ export default class OrderFood extends Component {
           </View>
 
            
-           <View className={this.state.isdiaplaymealfood == true ? "mealfood-view-bottonnavr" : "mealfood-view-bottonnavr-hidden"}>
+             <View className={this.state.isdiaplaymealfood == true ? "mealfood-view-bottonnavr" : "mealfood-view-bottonnavr-hidden"}>
              
                  <View className="mealfood-content">
                    <View className="leftcontent-view" onClick={this.ondisplayfloatview}>
@@ -565,16 +566,8 @@ export default class OrderFood extends Component {
                  </View>
            </View>
         
-           
-           {/* <AtActionSheet isOpened={this.state.floatisOpened} onClose={this.oncancelfloatview}>
-              <AtActionSheetItem>
-                按钮一
-              </AtActionSheetItem>
-              <AtActionSheetItem>
-                按钮二
-              </AtActionSheetItem>
-            </AtActionSheet> */}
-            <View className={this.state.floatisOpened == true ? "xuanfu" : "xuanfu-hidden"}>
+         
+             <View className={this.state.floatisOpened == true ? "xuanfu" : "xuanfu-hidden"}>
                     <AtFloatLayout isOpened={this.state.floatisOpened} onClose={this.oncancelfloatview} scrollY={true}>
                         <View className="float-view-container">
                             <View className="onerow-content">

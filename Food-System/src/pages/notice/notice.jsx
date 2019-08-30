@@ -6,7 +6,7 @@ import './notice.scss'
 
 export default class Notice extends Component{
     config={
-        navigationBarTitleText:"登录"
+        navigationBarTitleText:"公告"
     }
     constructor(props){
         super(props)
@@ -29,7 +29,7 @@ export default class Notice extends Component{
      }
 
      onSeeNoticeDetail=()=>{
-         Taro.redirectTo({
+         Taro.navigateTo({
              url:"../noticedetail/noticedetail"
          })
      }
@@ -37,7 +37,7 @@ export default class Notice extends Component{
      render(){
          return(
              <View className="container-notice">
-                   <TopNav isdisplaynagator={true} title="公告" isdisplaydaydate={false} navigatetourl="../index/index"></TopNav>
+                   <TopNav  title="公告" isdisplaydaydate={false} isdisplaynagator={true}></TopNav>
                    <View className="notice-content">
                         <AtList>
                                    <AtListItem title='报餐规则调整通知' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:

@@ -4,6 +4,8 @@ import {AtList, AtListItem} from "taro-ui"
 import TopNav from "../../components/topnav/topnav"
 import './rules.scss'
 
+import TabBar from "../../components/tabbar/tabbar"
+
 export default class Rules extends Component{
     config={
         navigationBarTitleText:"规则"
@@ -31,7 +33,7 @@ export default class Rules extends Component{
      render(){
          return(
              <View className="container-rule">
-                   <TopNav isdisplaynagator={true} title="规则" isdisplaydaydate={false} navigatetourl="../index/index"></TopNav>
+                   <TopNav  title="规则" isdisplaydaydate={false} isdisplaynagator={true} ></TopNav>
                    <View className="rules-content">
                         <AtList>
                                 <AtListItem  title='报餐规则' extraText='只可预定第二天及以后的菜品' />
@@ -52,7 +54,7 @@ export default class Rules extends Component{
                         </View>
                        
                    </View>
-                   
+                 
              </View>
          )
      }

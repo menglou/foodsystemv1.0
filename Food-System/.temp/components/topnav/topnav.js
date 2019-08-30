@@ -5,6 +5,14 @@ import './topnav.scss';
 
 export default class TopNav extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      isdisplaynagator: false,
+      pagecount: 0
+    };
+  }
+
   componentWillMount() {}
 
   componentDidMount() {}
@@ -14,10 +22,9 @@ export default class TopNav extends Component {
   componentDidShow() {}
 
   componentDidHide() {}
-
   onNavigateBack = e => {
-    Taro.redirectTo({
-      url: e
+    Taro.navigateBack({
+      delta: 1 //倒退
     });
   };
 

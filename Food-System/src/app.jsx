@@ -2,6 +2,8 @@ import Taro, { Component } from '@tarojs/taro'
 import Index from './pages/index'
 import "taro-ui/dist/style/index.scss"
 import './app.scss'
+import TabBar from './components/tabbar/tabbar'
+import { View } from '@tarojs/components';
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -54,9 +56,12 @@ class App extends Component {
   // 请勿修改此函数
   render () {
     return (
-      <Index />
+      
+           <Index />
+               
     )
   }
 }
 
 Taro.render(<App />, document.getElementById('app'))
+ 

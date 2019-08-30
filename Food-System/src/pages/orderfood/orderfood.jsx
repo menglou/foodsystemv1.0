@@ -6,6 +6,8 @@ import {AtTabs, AtTabsPane,AtIcon,AtBadge,AtFloatLayout,AtCurtain,AtButton } fro
 import foodlist from "../../components/foodlist/foodlist"
 import getNextPreDate from "../../util/getdate"
 
+import TabBar from '../../components/tabbar/tabbar'
+
 const date=getNextPreDate(new Date())
 const foodlists=foodlist
 const selectfoodlistparam=[]
@@ -33,6 +35,7 @@ export default class OrderFood extends Component {
   }
 
   componentWillMount () { 
+  
     //初始化数据
     selectfoodlistparam.splice(0,selectfoodlistparam.length);
     var inistafoodforlist=this.state.foodforlist;
@@ -59,7 +62,7 @@ export default class OrderFood extends Component {
   componentDidMount () { }
 
   componentWillUnmount () {
-    
+   
    }
 
   componentDidShow () { }
@@ -489,7 +492,7 @@ _obj:需删除的对象
     return (
       <View className='containerview' >
 
-          <View className="topnav">
+             <View className="topnav">
                 <View className="content">
                   <View className="nagator">
                       <View className="daohanwrrow">
@@ -532,7 +535,7 @@ _obj:需删除的对象
          
            
 
-          <View className="tabview">
+             <View className="tabview">
             <AtTabs current={this.state.current} tabList={tabList} onClick={this.changeTab.bind(this)}   >
                   <AtTabsPane current={this.state.current} index={0} >
                       {
@@ -576,7 +579,7 @@ _obj:需删除的对象
           </View>
 
            
-           <View className={this.state.isdiaplaymealfood==true?"mealfood-view-bottonnavr":"mealfood-view-bottonnavr-hidden"}>
+             <View className={this.state.isdiaplaymealfood==true?"mealfood-view-bottonnavr":"mealfood-view-bottonnavr-hidden"}>
              
                  <View className="mealfood-content">
                    <View className="leftcontent-view" onClick={this.ondisplayfloatview}>
@@ -596,16 +599,8 @@ _obj:需删除的对象
                  </View>
            </View>
         
-           
-           {/* <AtActionSheet isOpened={this.state.floatisOpened} onClose={this.oncancelfloatview}>
-              <AtActionSheetItem>
-                按钮一
-              </AtActionSheetItem>
-              <AtActionSheetItem>
-                按钮二
-              </AtActionSheetItem>
-            </AtActionSheet> */}
-            <View className={this.state.floatisOpened==true?"xuanfu":"xuanfu-hidden"}>
+         
+             <View className={this.state.floatisOpened==true?"xuanfu":"xuanfu-hidden"}>
                     <AtFloatLayout   isOpened={this.state.floatisOpened}  onClose={this.oncancelfloatview} scrollY={true}>
                         <View className="float-view-container">
                             <View className="onerow-content">

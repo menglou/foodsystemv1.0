@@ -3,28 +3,40 @@ import { View, Text,Button,Picker,Input,Image} from '@tarojs/components'
 import './topnav.scss'
 
 export default class TopNav extends Component{
+
+    constructor(props){
+        super(props);
+        this.state={
+            isdisplaynagator:false,
+            pagecount:0
+        }
+    }
     
     componentWillMount () { 
-        
+       
       }
     
-      componentDidMount () { }
+      componentDidMount () {
+        
+       }
     
       componentWillUnmount () {
         
        }
     
-      componentDidShow () { }
+      componentDidShow () { 
+       
+      }
     
       componentDidHide () {
-        
+         
        }
-      
        onNavigateBack=(e)=>{
-              Taro.redirectTo({
-                  url:e
-              })
-       }
+         Taro.navigateBack({
+            delta:1//倒退
+       })
+    }
+       
 
     render(){
         return(
