@@ -3,6 +3,7 @@ import Taro, { Component } from "@tarojs/taro-h5";
 import { View, Text, Button, Picker, Input, Image } from '@tarojs/components';
 import './orderfood.scss';
 import icon from '../../asset/image/index.jpg';
+import orderfoodsuccess from '../../asset/image/mealmodel.png';
 import { AtTabs, AtTabsPane, AtIcon, AtBadge, AtFloatLayout, AtCurtain } from "taro-ui";
 import foodlist from "../../components/foodlist/foodlist";
 import getNextPreDate from "../../util/getdate";
@@ -617,6 +618,9 @@ export default class OrderFood extends Component {
              <View className={this.state.isdisplaymeelfoodsuccess == true ? "" : ""}>
                 <AtCurtain isOpened={this.state.isdisplaymeelfoodsuccess} onClose={this.onClose}>
                   <View className="melfoodpopview">
+                     <View className="mealfoodsuccess-image-view">
+                        <Image className="successimage" src={orderfoodsuccess}></Image>
+                     </View>
                      <View className="mealfoodsuccesbtnview">
                        <Button className="foodsuccesbtn" onClick={this.onSeeMenu}>查看菜单</Button>
                      </View>
