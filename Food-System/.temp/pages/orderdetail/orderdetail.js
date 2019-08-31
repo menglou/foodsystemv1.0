@@ -87,7 +87,70 @@ export default class OrderDetail extends Component {
                                            ￥30
                                </View>
                          </View>
-                         
+                         <View className="meal-info">
+                               <View className="meal-info-left">
+                                   <View className="meal-image-view">
+                                        <Image className="meal-image" src={shujiao}></Image>
+                                   </View>
+                                   <View className="meal-name-view">
+                                           水饺
+                                   </View>
+                                   <View className="meal-count-view">
+                                           x 1
+                                   </View>
+                               </View>
+                               <View className="meal-info-right">
+                                           ￥30
+                               </View>
+                         </View>
+                         <View className="meal-info">
+                               <View className="meal-info-left">
+                                   <View className="meal-image-view">
+                                        <Image className="meal-image" src={shujiao}></Image>
+                                   </View>
+                                   <View className="meal-name-view">
+                                           水饺
+                                   </View>
+                                   <View className="meal-count-view">
+                                           x 1
+                                   </View>
+                               </View>
+                               <View className="meal-info-right">
+                                           ￥30
+                               </View>
+                         </View>
+                         <View className="meal-info">
+                               <View className="meal-info-left">
+                                   <View className="meal-image-view">
+                                        <Image className="meal-image" src={shujiao}></Image>
+                                   </View>
+                                   <View className="meal-name-view">
+                                           水饺
+                                   </View>
+                                   <View className="meal-count-view">
+                                           x 1
+                                   </View>
+                               </View>
+                               <View className="meal-info-right">
+                                           ￥30
+                               </View>
+                         </View>
+                         <View className="meal-info">
+                               <View className="meal-info-left">
+                                   <View className="meal-image-view">
+                                        <Image className="meal-image" src={shujiao}></Image>
+                                   </View>
+                                   <View className="meal-name-view">
+                                           水饺
+                                   </View>
+                                   <View className="meal-count-view">
+                                           x 1
+                                   </View>
+                               </View>
+                               <View className="meal-info-right">
+                                           ￥30
+                               </View>
+                         </View>
                          
 
                          <View className="order-total-money-view">
@@ -95,7 +158,7 @@ export default class OrderDetail extends Component {
                                     总价:
                                </View>
                                <View className="order-total-money-cont">
-                                    ￥30
+                                    ￥210
                                </View>
                          </View>
                     </View>
