@@ -39,18 +39,21 @@ export default class Notice extends Component{
              <View className="container-notice">
                    <TopNav  title="公告" isdisplaydaydate={false} isdisplaynagator={true}></TopNav>
                    <View className="notice-content">
-                        <AtList>
-                                   <AtListItem title='报餐规则调整通知' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:
-                                    25, color: '#fb4241', value: 'volume-plus', }} onClick={this.onSeeNoticeDetail} />
-                                    <AtListItem title='早餐报餐时间更改通知' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:
-                                    25, color: '#fb4241', value: 'volume-plus', }} onClick={this.onSeeNoticeDetail} /> 
-                                    <AtListItem title='早餐就餐时间公告' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:
-                                    25, color: '#fb4241', value: 'volume-plus', }} onClick={this.onSeeNoticeDetail} /> 
-                                    <AtListItem title='午餐报餐时间公告' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:
-                                    25, color: '#fb4241', value: 'volume-plus', }} onClick={this.onSeeNoticeDetail} /> 
-                                    <AtListItem title='午餐就餐时间公告' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:
-                                    25, color: '#fb4241', value: 'volume-plus', }} onClick={this.onSeeNoticeDetail} />  
-                        </AtList>
+                       <View className="notice-content-detail">
+                            <AtList>
+                                        <AtListItem title='报餐规则调整通知' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:
+                                            25, color: '#fb4241', value: 'volume-plus', }} onClick={this.onSeeNoticeDetail} />
+                                            <AtListItem title='早餐报餐时间更改通知' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:
+                                            25, color: '#fb4241', value: 'volume-plus', }} onClick={this.onSeeNoticeDetail} /> 
+                                            <AtListItem title='早餐就餐时间公告' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:
+                                            25, color: '#fb4241', value: 'volume-plus', }} onClick={this.onSeeNoticeDetail} /> 
+                                            <AtListItem title='午餐报餐时间公告' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:
+                                            25, color: '#fb4241', value: 'volume-plus', }} onClick={this.onSeeNoticeDetail} /> 
+                                            <AtListItem title='午餐就餐时间公告' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:
+                                            25, color: '#fb4241', value: 'volume-plus', }} onClick={this.onSeeNoticeDetail} />  
+                                </AtList>
+                       </View>
+                        
                        
                    </View>
                    

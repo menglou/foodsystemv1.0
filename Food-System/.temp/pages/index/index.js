@@ -38,7 +38,7 @@ export default class Index extends Component {
     });
   };
   onRedircto = () => {
-    Taro.redirectTo({
+    Taro.navigateTo({
       url: "../rules/rules" //跳转到规则页面  0//代表是tabbar切换到这个页面的  1//代表不是tabbar切换到这个页面的 
     });
   };
@@ -48,7 +48,7 @@ export default class Index extends Component {
     });
   };
   onredirecttonotice = () => {
-    Taro.redirectTo({
+    Taro.navigateTo({
       url: "../notice/notice" //跳转到公告  0//代表是tabbar切换到这个页面的  1//代表不是tabbar切换到这个页面的 
     });
   };
