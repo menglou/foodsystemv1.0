@@ -2,6 +2,12 @@ import Taro, { Component } from "@tarojs/taro-h5";
 
 import "taro-ui/dist/style/index.scss";
 import './app.scss';
+
+
+import { Provider } from "@tarojs/redux-h5";
+
+import configStore from './store/index';
+
 import { View, Tabbar, TabbarContainer, TabbarPanel } from '@tarojs/components';
 import Nerv from "nervjs";
 import { Router, createHistory, mountApis } from '@tarojs/router';
@@ -22,7 +28,7 @@ const _taroHistory = createHistory({
 });
 
 mountApis(_taroHistory);
-
+const store = configStore();
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -71,53 +77,56 @@ class App extends Component {
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
   render() {
-    return <TabbarContainer>
+    return <Provider store={store}>
+                  
+                  <TabbarContainer>
 
                     <TabbarPanel>
                       
               <Router history={_taroHistory} routes={[{
-          path: '/pages/index/index',
-          componentLoader: () => import( /* webpackChunkName: "index_index" */'./pages/index/index'),
-          isIndex: true
-        }, {
-          path: '/pages/orderfood/orderfood',
-          componentLoader: () => import( /* webpackChunkName: "orderfood_orderfood" */'./pages/orderfood/orderfood'),
-          isIndex: false
-        }, {
-          path: '/pages/minemenu/minemenu',
-          componentLoader: () => import( /* webpackChunkName: "minemenu_minemenu" */'./pages/minemenu/minemenu'),
-          isIndex: false
-        }, {
-          path: '/pages/orderdetail/orderdetail',
-          componentLoader: () => import( /* webpackChunkName: "orderdetail_orderdetail" */'./pages/orderdetail/orderdetail'),
-          isIndex: false
-        }, {
-          path: '/pages/mine/mine',
-          componentLoader: () => import( /* webpackChunkName: "mine_mine" */'./pages/mine/mine'),
-          isIndex: false
-        }, {
-          path: '/pages/rules/rules',
-          componentLoader: () => import( /* webpackChunkName: "rules_rules" */'./pages/rules/rules'),
-          isIndex: false
-        }, {
-          path: '/pages/login/login',
-          componentLoader: () => import( /* webpackChunkName: "login_login" */'./pages/login/login'),
-          isIndex: false
-        }, {
-          path: '/pages/notice/notice',
-          componentLoader: () => import( /* webpackChunkName: "notice_notice" */'./pages/notice/notice'),
-          isIndex: false
-        }, {
-          path: '/pages/noticedetail/noticedetail',
-          componentLoader: () => import( /* webpackChunkName: "noticedetail_noticedetail" */'./pages/noticedetail/noticedetail'),
-          isIndex: false
-        }]} customRoutes={{}} />
+            path: '/pages/index/index',
+            componentLoader: () => import( /* webpackChunkName: "index_index" */'./pages/index/index'),
+            isIndex: true
+          }, {
+            path: '/pages/orderfood/orderfood',
+            componentLoader: () => import( /* webpackChunkName: "orderfood_orderfood" */'./pages/orderfood/orderfood'),
+            isIndex: false
+          }, {
+            path: '/pages/minemenu/minemenu',
+            componentLoader: () => import( /* webpackChunkName: "minemenu_minemenu" */'./pages/minemenu/minemenu'),
+            isIndex: false
+          }, {
+            path: '/pages/orderdetail/orderdetail',
+            componentLoader: () => import( /* webpackChunkName: "orderdetail_orderdetail" */'./pages/orderdetail/orderdetail'),
+            isIndex: false
+          }, {
+            path: '/pages/mine/mine',
+            componentLoader: () => import( /* webpackChunkName: "mine_mine" */'./pages/mine/mine'),
+            isIndex: false
+          }, {
+            path: '/pages/rules/rules',
+            componentLoader: () => import( /* webpackChunkName: "rules_rules" */'./pages/rules/rules'),
+            isIndex: false
+          }, {
+            path: '/pages/login/login',
+            componentLoader: () => import( /* webpackChunkName: "login_login" */'./pages/login/login'),
+            isIndex: false
+          }, {
+            path: '/pages/notice/notice',
+            componentLoader: () => import( /* webpackChunkName: "notice_notice" */'./pages/notice/notice'),
+            isIndex: false
+          }, {
+            path: '/pages/noticedetail/noticedetail',
+            componentLoader: () => import( /* webpackChunkName: "noticedetail_noticedetail" */'./pages/noticedetail/noticedetail'),
+            isIndex: false
+          }]} customRoutes={{}} />
               
                     </TabbarPanel>
 
                     <Tabbar conf={this.state.__tabs} homePage="pages/index/index" router={Taro} />
 
-                  </TabbarContainer>;
+                  </TabbarContainer>
+                </Provider>;
   }
 
   componentWillUnmount() {

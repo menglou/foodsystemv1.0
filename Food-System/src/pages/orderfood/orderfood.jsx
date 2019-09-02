@@ -9,10 +9,38 @@ import getNextPreDate from "../../util/getdate"
 
 import TabBar from '../../components/tabbar/tabbar'
 
+import {connect} from '@tarojs/redux'
+  
+import  {addchangeselectedmeal,minuschangeselectedmeal,selectedaddchangeselectedmeal,selectedminuschangeselectedmeal,clearchangeselectedmeal,displayselectdfoodview} from '../../action/managerselectedfood'
+
+
+
 const date=getNextPreDate(new Date())
-const foodlists=foodlist
-const selectfoodlistparam=[]
 const tabList = [{ title: '早餐' }, { title: '中餐' }, { title: '晚餐' }]
+
+@connect(({ managerselectedfood }) => ({
+  managerselectedfood
+}), (dispatch) => ({
+  addchangeselectedmeal(e){
+    dispatch(addchangeselectedmeal(e))
+  },
+  minuschangeselectedmeal(e){
+    dispatch(minuschangeselectedmeal(e))
+  },
+  selectedaddchangeselectedmeal(e){
+    dispatch(selectedaddchangeselectedmeal(e))
+  },
+  selectedminuschangeselectedmeal(e){
+    dispatch(selectedminuschangeselectedmeal(e))
+  },
+  clearchangeselectedmeal(e){
+    dispatch(clearchangeselectedmeal(e))
+  },
+  displayselectdfoodview(e){
+    dispatch(displayselectdfoodview(e))
+  }
+}))
+
 
 export default class OrderFood extends Component {
 
@@ -23,54 +51,21 @@ export default class OrderFood extends Component {
     super(props)
     this.state = {
       current: 0,
-      data:date,
+      data:date,//为了显示 某月某日  某星期
       nochangedate:new Date().toLocaleDateString(),
-      foodforlist:foodlists,//菜品列表
-      selectedfoodforlist:[],//已选择菜品
-      isdiaplaymealfood:false,//控制是否显示报餐导航
-      foodcount:0,//总数量
-      totalmoney:0.0,//总价钱
-      floatisOpened:false,//控制已选择菜品悬窗是否显示,
       isdisplaymeelfoodsuccess:false//用来控制是否显示报餐成功的模态框
     }
   }
 
-  componentWillMount () { 
-  
-    //初始化数据
-    selectfoodlistparam.splice(0,selectfoodlistparam.length);
-    var inistafoodforlist=this.state.foodforlist;
-    for(let i=0;i<inistafoodforlist.length;i++){
-        if(inistafoodforlist[i].count>0){
-            inistafoodforlist[i].count=0;
-        }
-        if(inistafoodforlist[i].Isdisplay==true){
-            inistafoodforlist[i].Isdisplay=false;
-        }
-    }
-    this.setState({
-        foodforlist:inistafoodforlist
-    },()=>{})
-    console.log(this.state.foodlists)
-    console.log(this.state.foodforlist)
-    console.log(this.state.selectedfoodforlist)
-    console.log(this.state.foodcount)
-    console.log(this.state.totalmoney)
-    console.log(this.state.selectfoodlistparam)
-    
-  }
+  componentWillMount () { }
 
   componentDidMount () { }
 
-  componentWillUnmount () {
-   
-   }
+  componentWillUnmount () {}
 
   componentDidShow () { }
 
-  componentDidHide () {
-     
-   }
+  componentDidHide () {}
 
   //改变tab页
   changeTab (value) {
@@ -79,6 +74,7 @@ export default class OrderFood extends Component {
     })
   }
 
+  /*日期的下拉列表改变*/
   onDateChange = e => {
     this.setState({
       data: getNextPreDate(this.onchangedateformat(e.detail.value,"down")),
@@ -96,7 +92,7 @@ export default class OrderFood extends Component {
       now.setDate(now.getDate() + 1)
       return now;
     }
-    if(type=="jian")
+    if(type=="minus")
     {
       let Arr = date.split("/");
       let now = new Date(Number(Arr['0']), (Number(Arr['1']) - 1), Number(Arr['2']));
@@ -121,10 +117,10 @@ export default class OrderFood extends Component {
 
   //后一天
   onPrevDay(date){
-    let data=getNextPreDate(this.onchangedateformat(date,"jian"));
+    let data=getNextPreDate(this.onchangedateformat(date,"minus"));
     this.setState({
       data:data,
-      nochangedate:(this.onchangedateformat(date,"jian")).toLocaleDateString()
+      nochangedate:(this.onchangedateformat(date,"minus")).toLocaleDateString()
     },()=>{})
   }
 
@@ -138,337 +134,13 @@ export default class OrderFood extends Component {
     }
 }
 
-  //加
-  onAdd=(e)=>{
-    
-    var index = e.target.dataset.index;//获取索引
-    var foodforlist = this.state.foodforlist;//获取菜品列表信息
-    var count = foodforlist[index].count;//获取当前索引的count值
-    
-    foodforlist[index].count++  //点击加按钮数量加一个
-    foodforlist[index].Isdisplay=true;//设置数量和减按钮是否显示
-
-    
-//已选择的菜品 
-     var ishave=0;
-    if(this.state.selectedfoodforlist.length>=1){
-        this.state.selectedfoodforlist.forEach(item=>{
-           
-            if(item.id===foodforlist[index].id){
-                ishave=1
-            }
-        })
-           
-        if(ishave===0){
-            selectfoodlistparam.push(foodforlist[index]);
-            this.setState({
-                selectedfoodforlist:selectfoodlistparam,
-              },()=>{})
-        }
-        
-    }
-    else{
-        selectfoodlistparam.push(foodforlist[index]);
-        this.setState({
-            selectedfoodforlist:selectfoodlistparam,
-          },()=>{})
-    }
-
-    this.setState({
-      foodforlist:foodforlist,
-      isdiaplaymealfood:true,
-    },()=>{})
-       
-      let price=parseFloat(foodforlist[e.currentTarget.dataset.index].price.replace("￥","")); 
-      
-      this.oncalculateTotal(1,price,"add")
-  }
-//减
-  onMinus=(e)=>{
-    var index = e.target.dataset.index;
-    var foodforlist = this.state.foodforlist;
-    var count = foodforlist[index].count;
-    foodforlist[index].count--
-    var countnow= count-1;
-    
-    if(countnow<1)//判断如果当前的数量小于1 隐藏减号按钮和显示数量的text
-    {
-      foodforlist[index].Isdisplay=false;//用来控制是否显示减号按钮和显示数量的text（true显示 flase不显示）
-
-      //检查已选择的菜单(如果菜单中的某个数量小于1了。那么对应的已选择的菜单中应该移除这个菜品)
-       this.state.selectedfoodforlist.forEach(item=>{
-            if(item.id===foodforlist[index].id){
-               
-                var returnarry= this.removeAaary(selectfoodlistparam,foodforlist[index])
-                this.setState({
-                    selectedfoodforlist:returnarry
-                },()=>{})
-            }
-       })
-
-      this.setState({
-        foodforlist:foodforlist,
-     },()=>{})
-    }
-    else{
-
-      //菜品列表中某个菜的数量减一，那么相对应的已选择的菜品列表中这个菜的数量也相对应的减一
-
-
-      this.setState({
-        foodforlist:foodforlist
-     },()=>{})
-    }
-       let price=parseFloat(foodforlist[e.currentTarget.dataset.index].price.replace("￥","")); 
-       
-       this.oncalculateTotal(1,price,"minus")
-
-  }
-
-  //计算总价钱和总个数
-  oncalculateTotal=(count,price,type)=>{
-       
-    if(type=="add")
-    {
-      let moenyindex=String(price*count);
-       
-      this.setState({
-        foodcount:this.state.foodcount+count,
-        totalmoney:this.state.totalmoney+parseFloat(moenyindex)
-      },()=>{})
-    }
-    else{
-      
-      let moenyindex=String(price*count);
-      this.setState({
-        foodcount:this.state.foodcount-count,
-        totalmoney:this.state.totalmoney-parseFloat(moenyindex)
-      },()=>{
-        if(this.state.foodcount<1){
-          this.setState({
-            isdiaplaymealfood:false
-        },()=>{})
-        }
-      })
-    }
-  }
-
-  /*删除数组中的某一个对象
-_arr:数组
-_obj:需删除的对象
-*/
- removeAaary=(_arr, _obj)=> {
-    var length = _arr.length;
-    for (var i = 0; i < length; i++) {
-        if (_arr[i] == _obj) {
-            if (i == 0) {
-                _arr.shift(); //删除并返回数组的第一个元素
-                return _arr;
-            }
-            else if (i == length - 1) {
-                _arr.pop();  //删除并返回数组的最后一个元素
-                return _arr;
-            }
-            else {
-                _arr.splice(i, 1); //删除下标为i的元素
-                return _arr;
-            }
-        }
-    }
-}
-
-
-//设置显示悬浮窗
-  ondisplayfloatview=()=>{
-      this.setState({
-        floatisOpened:true
-      },()=>{
-
-      })
-  }
-
-  oncancelfloatview=()=>{
-    this.setState({
-        floatisOpened:false
-      },()=>{
-
-      })
-  }
-
-  //已选择的加
-  onSelectedAdd=(e)=>{
-        
-    //1在已选择的菜品数组中对应数量加1
-
-    //2在展示列表中找到对应的商品数量也加一
-
-    var index = e.target.dataset.index;
-    var selectedfoodlist=this.state.selectedfoodforlist;
-    selectedfoodlist[index].count++;
-    var id=selectedfoodlist[index].id;
-    this.setState({
-      selectedfoodforlist:selectedfoodlist
-    })
-     
-    var foodforlist=this.state.foodforlist
-    foodforlist.forEach(item=>{
-        if(item.id===id){
-           item.count+1;
-        }
-
-        this.setState({
-          foodforlist:foodforlist
-        })
-    })
-
-    let price=parseFloat(selectedfoodlist[e.currentTarget.dataset.index].price.replace("￥","")); 
-       
-    this.oncalculateTotal(1,price,"add")
-    
-  }
-  //已选择的减
-  onSelectedMinus=(e)=>{
-    //如果在已选择的列表把某个菜品的数量减到小于1了，那么列表中要移除这个菜品  相对应的菜品列表中也要隐藏减号按钮和显示数量的文本
-    var index = e.target.dataset.index;
-    var selectedfoodlist=this.state.selectedfoodforlist;
-
-    var caculatemoneyfoodlistselected=this.state.selectedfoodforlist;
-    var selectedfoodlistforcaculatemoney=this.state.selectedfoodforlist;//用来计算价格的不能变
-
-
-    var count=selectedfoodlist[index].count;
-    var id=selectedfoodlist[index].id
-    selectedfoodlist[index].count--;
-    var nowcount=count-1;
-    
-    if(selectedfoodlist.length>1){
-    
-      if(nowcount<1){
-        
-        var fooslist=this.state.foodforlist;
-        fooslist.forEach(item=>{
-            if(item.id===id){
-              item.count-1;
-            }
-            if(item.count<1){
-              item.Isdisplay=false;
-            }
-        })
-        
-        let price=parseFloat(selectedfoodlist[e.currentTarget.dataset.index].price.replace("￥","")); 
-        this.oncalculateTotal(1,price,"minus")
-
-        selectedfoodlist.splice(index,1);
-
-        this.setState({
-          foodforlist:fooslist,
-          selectedfoodforlist:selectedfoodlist
-        }) 
-      }
-      else{
-        var fooslist=this.state.foodforlist;
-        fooslist.forEach(item=>{
-            if(item.id===id){
-              item.count-1;
-            }
-        })
-        this.setState({
-          foodforlist:fooslist,
-          selectedfoodforlist:selectedfoodlist
-        }) 
-
-        let price=parseFloat(selectedfoodlist[e.currentTarget.dataset.index].price.replace("￥","")); 
-        this.oncalculateTotal(1,price,"minus")
-      }
-      
-    }
-    else{
-      if(nowcount<1){
-        
-        var fooslist=this.state.foodforlist;
-        fooslist.forEach(item=>{
-            if(item.id===id){
-              item.count-1;
-            }
-            if(item.count<1){
-              item.Isdisplay=false;
-            }
-        })
-
-        let price=parseFloat(selectedfoodlist[e.currentTarget.dataset.index].price.replace("￥","")); 
-        this.oncalculateTotal(1,price,"minus")
-
-
-        selectedfoodlist.splice(index,1);
-        this.setState({
-          foodforlist:fooslist,
-          selectedfoodforlist:selectedfoodlist,
-          floatisOpened:false,
-          isdiaplaymealfood:false,
-          totalmoney:0.0,
-          foodcount:0
-        }) 
-      }
-      else{
-       
-        var fooslist=this.state.foodforlist;
-        fooslist.forEach(item=>{
-            if(item.id===id){
-              item.count-1;
-            }
-            if(item.count<1){
-              item.Isdisplay=false;
-            }
-        })
-        this.setState({
-          foodforlist:fooslist,
-          selectedfoodforlist:selectedfoodlist,
-        }) 
-
-        let price=parseFloat(selectedfoodlist[e.currentTarget.dataset.index].price.replace("￥","")); 
-        this.oncalculateTotal(1,price,"minus")
-      }
-    }
-  }
-
-  //清空已选择的菜品
-  onClearSelectedFood=()=>{
-    //1.把应选择的菜品的数组清空
-
-    //2.把菜品列表中选择的菜品重置，重置成初始化模式（包括数量以及总金额，总数量）
-
-     //初始化数据
-    //selectfoodlistparam=[];
-    selectfoodlistparam.splice(0,selectfoodlistparam.length);
-    console.log("woshi:"+selectfoodlistparam);
-    
-    var inistafoodforlist=this.state.foodforlist;
-    for(let i=0;i<inistafoodforlist.length;i++){
-        if(inistafoodforlist[i].count>0){
-            inistafoodforlist[i].count=0;
-        }
-        if(inistafoodforlist[i].Isdisplay==true){
-            inistafoodforlist[i].Isdisplay=false;
-        }
-    }
-    this.setState({
-        foodforlist:inistafoodforlist,
-        selectedfoodforlist:[],
-        floatisOpened:false,
-        totalmoney:0.0,
-        foodcount:0,
-        isdiaplaymealfood:false
-    },()=>{
-      console.log(this.state.selectedfoodforlist)
-    })
-
-  }
-
   //报餐
   onMealFood=()=>{
     this.setState({
       isdisplaymeelfoodsuccess:true
     })
+    //在报餐成功的情况下清空之前reducer中存的
+    this.props.clearchangeselectedmeal()
   }
 
   //关闭订单成功的悬浮窗
@@ -540,7 +212,7 @@ _obj:需删除的对象
             <AtTabs current={this.state.current} tabList={tabList} onClick={this.changeTab.bind(this)}   >
                   <AtTabsPane current={this.state.current} index={0} >
                       {
-                        this.state.foodforlist.map((food,i)=>
+                        this.props.managerselectedfood.listfood.map((food,i)=>
                         <View>
                               <View className="fooddisplayview"  >
                                 <View className="image-view">
@@ -556,13 +228,13 @@ _obj:需删除的对象
                                 </View>
                                 <View className="btnview">
                                     <View className="jianview">
-                                        <View className={food.Isdisplay==true?"btnjian":"btnjianhidden"}  key={food.id} data-index={i} onClick={this.onMinus}>-</View>
+                                        <View className={food.Isdisplay==true?"btnjian":"btnjianhidden"}  key={food.id} data-index={i} onClick={this.props.minuschangeselectedmeal.bind(this,i)}>-</View>
                                     </View>
                                     <View className={food.Isdisplay==true?"countview":"countviewhidden"}>
                                       <Text key={food.id} data-index={i} >{food.count}</Text>
                                     </View>
                                     <View className="addview">
-                                        <View className="btnadd" key={food.id} data-index={i} onClick={this.onAdd}>+</View>
+                                        <View className="btnadd" key={food.id} data-index={i} onClick={this.props.addchangeselectedmeal.bind(this,i)}>+</View>
                                     </View>
                               </View>
                               </View>
@@ -580,17 +252,17 @@ _obj:需删除的对象
           </View>
 
            
-             <View className={this.state.isdiaplaymealfood==true?"mealfood-view-bottonnavr":"mealfood-view-bottonnavr-hidden"}>
+             <View className={this.props.managerselectedfood.isdiaplaymealfood==true?"mealfood-view-bottonnavr":"mealfood-view-bottonnavr-hidden"}>
              
                  <View className="mealfood-content">
-                   <View className="leftcontent-view" onClick={this.ondisplayfloatview}>
+                   <View className="leftcontent-view" onClick={this.props.displayselectdfoodview.bind(this,'display')}>
                          <View className="bage-icon">
-                         <AtBadge value={this.state.foodcount} maxValue={99}>
-                            <Image src={icon} className="icon-image" onClick={this.ondisplayfloatview}></Image>
+                         <AtBadge value={this.props.managerselectedfood.foodcount} maxValue={99}>
+                            <Image src={icon} className="icon-image" onClick={this.props.displayselectdfoodview.bind(this,'display')}></Image>
                           </AtBadge>
                          </View>
                          <View className="totalmoney-view">
-                                 <Text>￥{this.state.totalmoney}</Text>
+                                 <Text>￥{this.props.managerselectedfood.totalmoney}</Text>
                          </View>
                    </View>
                      
@@ -601,8 +273,8 @@ _obj:需删除的对象
            </View>
         
          
-             <View className={this.state.floatisOpened==true?"xuanfu":"xuanfu-hidden"}>
-                    <AtFloatLayout   isOpened={this.state.floatisOpened}  onClose={this.oncancelfloatview} scrollY={true}>
+             <View className={this.props.managerselectedfood.floatisOpened==true?"xuanfu":"xuanfu-hidden"}>
+                    <AtFloatLayout   isOpened={this.props.managerselectedfood.floatisOpened}  onClose={this.props.displayselectdfoodview.bind(this,'close')} scrollY={true}>
                         <View className="float-view-container">
                             <View className="onerow-content">
                                 <View className="left-onerow-content">
@@ -612,7 +284,7 @@ _obj:需删除的对象
                                     <View className="deleiconview">
                                         <AtIcon value="trash" size="20" color="#9f9f9f"></AtIcon>
                                     </View>
-                                    <View className="celarlist-view" onClick={this.onClearSelectedFood}>
+                                    <View className="celarlist-view" onClick={this.props.clearchangeselectedmeal}>
                                         清空
                                     </View>
                                 </View>
@@ -620,7 +292,7 @@ _obj:需删除的对象
                             <View className="tworow-content">
                                     <AtTabsPane current={this.state.current} index={0} >
                                     {
-                                        this.state.selectedfoodforlist.map((food,i)=>
+                                        this.props.managerselectedfood.selectedfood.map((food,i)=>
                                         <View>
                                              <View className="selected-fooddisplayview"  >
                                                 <View className="selected-food-description">
@@ -633,13 +305,13 @@ _obj:需删除的对象
                                                 </View>
                                                 <View className="selected-btnview">
                                                     <View className="selected-jianview">
-                                                        <View className="selected-tnjian" data-index={i}  onClick={this.onSelectedMinus}>-</View>
+                                                        <View className="selected-tnjian" data-index={i}  onClick={this.props.selectedminuschangeselectedmeal.bind(this,i)}>-</View>
                                                     </View>
                                                     <View className="selected-countview">
                                                       <Text >{food.count}</Text>
                                                     </View>
                                                     <View className="selected-addview">
-                                                        <View className="selected-btnadd" data-index={i} onClick={this.onSelectedAdd}>+</View>
+                                                        <View className="selected-btnadd" data-index={i} onClick={this.props.selectedaddchangeselectedmeal.bind(this,i)}>+</View>
                                                     </View>
                                                 </View>
                                              </View>
