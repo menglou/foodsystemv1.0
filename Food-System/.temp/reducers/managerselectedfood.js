@@ -170,7 +170,7 @@ export default function managerselectedfood(state = INITIAL_STATE, action) {
         floatisOpened: result.floatisOpened
       };
     case ISDISPLAYSELECTEDFOODVIEW:
-      //选中菜单中的减
+      //控制是否显示展示已选菜品的model
       if (action.isdiplay === 'close') {
         state.floatisOpened = false;
       } else {

@@ -55,7 +55,8 @@ export default class TopNav extends Component {
                                            {this.props.orderstatus}
                                         </View>
                                     </View>
-                        </View>
+                            </View>
+                        
 
                     </View>
                 </View>;
