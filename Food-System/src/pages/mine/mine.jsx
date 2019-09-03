@@ -5,6 +5,21 @@ import TopNav from '../../components/topnav/topnav'
 import cxk from "../../asset/image/cxk.gif"
 import { AtAvatar ,AtList, AtListItem } from 'taro-ui'
 
+import {connect} from '@tarojs/redux'
+import {modifypwd,loginexits} from '../../action/manageruserinfo'
+
+@connect(({ manageruserinfo }) => ({
+    manageruserinfo
+  }), (dispatch) => ({
+    modifypwd(){
+      dispatch(modifypwd())
+    },
+    loginexits(){
+      dispatch(loginexits())
+    }
+  }))
+  
+
 export default class Mine extends Component{
     config={
         navigationBarTitleText:"个人中心"
@@ -70,15 +85,15 @@ export default class Mine extends Component{
                         <View className="mine-content-header">
                             <View className="mine-info-avatar">
                                 <View className="mineavator-view">
-                                   <AtAvatar image={cxk}  size="small" circle={true}></AtAvatar>
+                                   <AtAvatar image={this.props.manageruserinfo.userinfo.image}  size="small" circle={true}></AtAvatar>
                                 </View>
                             </View>
                             <View className="mine-info-desc">
                                     <View className="mine-info-desc-name">
-                                         菜虚鲲
+                                         {this.props.manageruserinfo.userinfo.name}
                                     </View>
                                     <View className="mine-info-desc-comp">
-                                          NBA中国形象大使
+                                         {this.props.manageruserinfo.userinfo.decription}
                                     </View>
                             </View>
                         </View>
