@@ -10,6 +10,9 @@ export default class Mine extends Component {
   config = {
     navigationBarTitleText: "个人中心"
   };
+  constructor(props) {
+    super(props);
+  }
 
   componentWillMount() {}
 

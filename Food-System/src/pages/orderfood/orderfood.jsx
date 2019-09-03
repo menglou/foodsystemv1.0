@@ -6,7 +6,7 @@ import orderfoodsuccess from '../../asset/image/mealmodel.png'
 import {AtTabs, AtTabsPane,AtIcon,AtBadge,AtFloatLayout,AtCurtain,AtButton } from "taro-ui"
 import foodlist from "../../components/foodlist/foodlist"
 import getNextPreDate from "../../util/getdate"
-
+import Format from '../../util/formatdate'
 import TabBar from '../../components/tabbar/tabbar'
 
 import {connect} from '@tarojs/redux'
@@ -57,7 +57,9 @@ export default class OrderFood extends Component {
     }
   }
 
-  componentWillMount () { }
+  componentWillMount () {
+    
+   }
 
   componentDidMount () { }
 
@@ -76,6 +78,7 @@ export default class OrderFood extends Component {
 
   /*日期的下拉列表改变*/
   onDateChange = e => {
+   
     this.setState({
       data: getNextPreDate(this.onchangedateformat(e.detail.value,"down")),
       nochangedate:e.detail.value
@@ -84,29 +87,25 @@ export default class OrderFood extends Component {
 
   // 需要先转换为Wed Jul 05 2017 13:50:11 GMT+0800 (中国标准时间)这种型式
   onchangedateformat=(date,type)=>{
-   
-    if(type=="add")
-    {
-      let Arr = date.split("/");
-      let now = new Date(Number(Arr['0']), (Number(Arr['1']) - 1), Number(Arr['2']));
-      now.setDate(now.getDate() + 1)
-      return now;
-    }
-    if(type=="minus")
-    {
-      let Arr = date.split("/");
-      let now = new Date(Number(Arr['0']), (Number(Arr['1']) - 1), Number(Arr['2']));
-      now.setDate(now.getDate() - 1)
-      return now;
-    }
     if(type=="down"){
       let Arr = date.split("-");
       let now = new Date(Number(Arr['0']), (Number(Arr['1']) - 1), Number(Arr['2']));
       return now;
     }
+    else{
+      var Arr=this.SpliteDateSring(date);
+      let now = new Date(Number(Arr['0']), (Number(Arr['1']) - 1), Number(Arr['2']));
+      if(type=="add"){
+        now.setDate(now.getDate() + 1)
+      }
+      else {
+        now.setDate(now.getDate() - 1)
+      }
+      return now;
+    }
   }
 
-  //前一天
+  //后一天
   onNextDay(date){
     let data=getNextPreDate(this.onchangedateformat(date,"add"));
     this.setState({
@@ -115,7 +114,7 @@ export default class OrderFood extends Component {
     },()=>{})
   }
 
-  //后一天
+  //前一天
   onPrevDay(date){
     let data=getNextPreDate(this.onchangedateformat(date,"minus"));
     this.setState({
@@ -124,6 +123,18 @@ export default class OrderFood extends Component {
     },()=>{})
   }
 
+//分割日期
+  SpliteDateSring=(date)=>{
+    var Arr;
+    if(date.search("-")==-1)
+    {
+       Arr = date.split("/");
+    }
+    else if(date.search("/")==-1){
+       Arr = date.split("-");
+    }
+    return Arr;
+  }
 
 //判断字符是否为空的方法
  isEmpty=(obj)=>{
