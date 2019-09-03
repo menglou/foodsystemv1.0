@@ -45,7 +45,7 @@ export default class Mine extends Component {
 
   render() {
     return <View className="container-mine">
-                 <TopNav isdisplaynagator={false} title="个人中心" isdisplaydaydate={false}></TopNav>
+                 <TopNav isdisplaynagator={false} title="个人中心" isdisplaydaydate={false} ishavedate={false}></TopNav>
                  <View className="mine-content">
                      <View className="mine-info">
                         <View className="mine-content-header">

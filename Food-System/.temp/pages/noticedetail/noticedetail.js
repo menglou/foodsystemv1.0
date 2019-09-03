@@ -27,7 +27,7 @@ export default class NoticeDetail extends Component {
 
   render() {
     return <View className="container-noticedetail">
-                   <TopNav title="公告" isdisplaydaydate={false} isdisplaynagator={true}></TopNav>
+                   <TopNav title="公告" isdisplaydaydate={false} isdisplaynagator={true} ishavedate={false}></TopNav>
                    <View className="noticedetail-content">
                             <View className="at-article">
                                 <View className="at-article__h1 title">

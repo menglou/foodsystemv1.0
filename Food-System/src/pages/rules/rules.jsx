@@ -33,7 +33,7 @@ export default class Rules extends Component{
      render(){
          return(
              <View className="container-rule">
-                   <TopNav  title="规则" isdisplaydaydate={false} isdisplaynagator={true} ></TopNav>
+                   <TopNav  title="规则" isdisplaydaydate={false} isdisplaynagator={true} ishavedate={false} ></TopNav>
                    <View className="rules-content">
                        <View className="rule-content-detial">
                             <AtList>

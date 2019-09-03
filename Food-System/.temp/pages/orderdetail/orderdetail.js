@@ -36,7 +36,7 @@ export default class OrderDetail extends Component {
 
   render() {
     return <View className="containerview-detail">
-                <TopNav title="订单详情" isdisplaydaydate={true} isdisplaynagator={true} date="8月8号  星期五" mealtype="早餐" orderstatus="已预定"></TopNav>
+                <TopNav title="订单详情" isdisplaydaydate={true} ishavedate={false} isdisplaynagator={true} date="8月8号  星期五" mealtype="早餐" orderstatus="已预定"></TopNav>
                 <View className="meal-deatil">
                     <View className="meal-deatil-content">
                          <View className="meal-info">

@@ -62,7 +62,7 @@ export default class Index extends Component {
   render() {
     return <View className="containerview-first">
 
-          <TopNav title="首页" isdisplaydaydate={false} isdisplaynagator={false}></TopNav>
+          <TopNav title="首页" isdisplaydaydate={false} isdisplaynagator={false} ishavedate={false}></TopNav>
           <View className="listcontent"> 
                <View className="functionmenu">
                    <View className="firstrow" onClick={this.onNavigatoOrderfood}>

@@ -42,7 +42,7 @@ export default class TopNav extends Component{
         return(
            
                 <View className="topnav-component">
-                    <View className="content-component">
+                    <View className={this.props.ishavedate==true?"content-component":"content-component-nodate"}>
                         <View className="nagator-component">
                             <View className="daohanwrrow-component">
                                <View className={this.props.isdisplaynagator==true?"at-icon at-icon-chevron-left":"nagator-didden"} onClick={this.onNavigateBack.bind(this,this.props.navigatetourl)}>
