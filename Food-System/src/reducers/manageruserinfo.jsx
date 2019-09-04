@@ -24,7 +24,6 @@ export default function manageruserinfo(state=INITIAL_STATE,action){
                   }
                case LOGIN://登录保存用户信息
                   
-               debugger
                   var account=action.account;//账号
                   var pwd=action.pwd;//密码
                   //调用接口登录

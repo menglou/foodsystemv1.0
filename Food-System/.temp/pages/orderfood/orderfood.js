@@ -204,13 +204,13 @@ class OrderFood extends Component {
                           </View>
                                   
                           <View className="dayviews">
-                              <Picker mode="date" onChange={this.onDateChange} className="sds">
+                              <Picker mode="date" onChange={this.onDateChange}>
                                       <View className="picker">
                                         <View className="calendariconview">
                                           <AtIcon value="calendar" size="20" color="#fff"></AtIcon>
                                         </View>
                                         <View className="datedisplayview">
-                                          <Input placeholder={this.state.data} value={this.state.data}></Input>
+                                             <Input value={this.state.data} type="text"></Input>
                                         </View>
                                         <View className="chevrondowniconview">
                                           <AtIcon value="chevron-down" size="20" color="#fff"></AtIcon>

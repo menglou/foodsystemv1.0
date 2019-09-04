@@ -14,17 +14,9 @@ export default class OrderDetail extends Component {
   };
   constructor(props) {
     super(props);
-    this.state = {
-      urlparam: null
-    };
   }
 
-  componentWillMount() {
-    var params = this.$router.params;
-    this.setState({
-      urlparam: params
-    });
-  }
+  componentWillMount() {}
 
   componentDidMount() {}
 
