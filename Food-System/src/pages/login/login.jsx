@@ -3,6 +3,7 @@ import { View, Text,Button,Picker,Input,Image} from '@tarojs/components'
 import { AtIcon } from 'taro-ui'
 import TopNav from "../../components/topnav/topnav"
 import './login.scss'
+import bg from '../../asset/image/canyin-bg.jpg'
 
 import {connect} from '@tarojs/redux'
 import {modifypwd,loginexits,login} from '../../action/manageruserinfo'
@@ -81,6 +82,9 @@ export default class Login extends Component{
          return(
              <View className="container-login">
                   <TopNav isdisplaynagator={true} title="登录" isloginpage={true} isdisplaydaydate={false} ishavedate={false}></TopNav>
+                  <View className="loginconetnt-bg">
+                       <Image src={bg} className="loginconetnt-bg-img"></Image>
+                  </View>
                    <View className="loginconetnt">
                         <View className="login-form">
                              <View className="form-input">
@@ -101,7 +105,7 @@ export default class Login extends Component{
                                      </View>
                                  </View>
                                  <View className="modify-pwd">
-                                      修改密码
+                                      密码修改
                                  </View>
                                  <View className="login-btn-view" onClick={this.onLogin}>
                                          立即登录

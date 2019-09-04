@@ -3,7 +3,7 @@
     left: 0;
     right: 0;
     top: 0;
-    z-index: 1;
+    z-index: 4;
     overflow: hidden;
     width: 100%;
     height: 100%;
@@ -11,19 +11,34 @@
      -webkit-box-sizing: border-box;
      box-sizing: border-box;
 }
-.loginconetnt{
+
+.loginconetnt-bg{
     position: absolute;
     width: 100%;
     height: 100%;
     margin-top: 160px;
-    background-image: url("../../asset/image/login-bg.jpg")
+    //background-image: url("../../asset/image/login-bg.jpg")
 }
+.loginconetnt-bg-img{
+    width: 100%;
+    height: 100%;
+}
+.loginconetnt{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 160px;
+    z-index: 4;
+    //background-image: url("../../asset/image/login-bg.jpg")
+}
+
+
 .login-form{
     margin: 0 5%;
-    padding-top: 30%;
+    padding-top: 40%;
     padding-bottom: 2%;
     width: 90%;
-    height: 68%;
+    height: 58%;
    
 }
 

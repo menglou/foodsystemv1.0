@@ -1,9 +1,10 @@
 import Nerv from "nervjs";
 import Taro, { Component } from "@tarojs/taro-h5";
-import { View, Input } from '@tarojs/components';
+import { View, Input, Image } from '@tarojs/components';
 import { AtIcon } from 'taro-ui';
 import TopNav from "../../components/topnav/topnav";
 import './login.scss';
+import bg from '../../asset/image/canyin-bg.jpg';
 
 import { connect } from "@tarojs/redux-h5";
 import { modifypwd, loginexits, login } from '../../action/manageruserinfo';
@@ -73,6 +74,9 @@ class Login extends Component {
   render() {
     return <View className="container-login">
                   <TopNav isdisplaynagator={true} title="登录" isloginpage={true} isdisplaydaydate={false} ishavedate={false}></TopNav>
+                  <View className="loginconetnt-bg">
+                       <Image src={bg} className="loginconetnt-bg-img"></Image>
+                  </View>
                    <View className="loginconetnt">
                         <View className="login-form">
                              <View className="form-input">
@@ -93,7 +97,7 @@ class Login extends Component {
                                      </View>
                                  </View>
                                  <View className="modify-pwd">
-                                      修改密码
+                                      密码修改
                                  </View>
                                  <View className="login-btn-view" onClick={this.onLogin}>
                                          立即登录
