@@ -8,7 +8,12 @@ import wancan from "../../asset/image/wancan.png";
 
 import TopNav from "../../components/topnav/topnav";
 
-export default class MineMenu extends Component {
+import { connect } from "@tarojs/redux-h5";
+
+export default @connect(({ manageruserinfo }) => ({
+  manageruserinfo
+}), dispatch => ({}))
+class MineMenu extends Component {
   config = {
     navigationBarTitleText: "我的菜单"
   };
@@ -17,7 +22,11 @@ export default class MineMenu extends Component {
     super(props);
   }
 
-  componentWillMount() {}
+  componentWillMount() {
+    if (Object.keys(this.props.manageruserinfo.userinfo).length === 0) {
+      Taro.redirectTo({ url: '../login/login' });
+    }
+  }
 
   componentDidMount() {}
 

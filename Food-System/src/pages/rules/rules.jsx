@@ -36,7 +36,7 @@ export default class Rules extends Component{
                    <TopNav  title="规则" isdisplaydaydate={false} isdisplaynagator={true} ishavedate={false} ></TopNav>
                    <View className="rules-content">
                        <View className="rule-content-detial">
-                            <AtList>
+                                <AtList>
                                         <AtListItem  title='报餐规则' extraText='只可预定第二天及以后的菜品' />
                                         <AtListItem  title='早餐报餐时间' extraText='当日早上5点前' />
                                         <AtListItem  title='早餐就餐时间' extraText='7:00-8:00' />
@@ -47,10 +47,7 @@ export default class Rules extends Component{
                                 </AtList>
                                 <View className="tipview">
                                     <View className="tipicon at-icon at-icon-alert-circle">
-                                        
-                                    </View>
-                                    <View className="tiptltle">
-                                        餐厅管理人员可在管理后台设置就餐规则
+                                        &nbsp;餐厅管理人员可在管理后台设置就餐规则
                                     </View>
                                 </View>
                        </View>

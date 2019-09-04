@@ -93,7 +93,8 @@ class App extends Component {
             isIndex: false
           }, {
             path: '/pages/minemenu/minemenu',
-            componentLoader: () => import( /* webpackChunkName: "minemenu_minemenu" */'./pages/minemenu/minemenu'),
+            componentLoader: () => import( /* webpackChunkName: "minemenu_minemenu" */
+            './pages/minemenu/minemenu'),
             isIndex: false
           }, {
             path: '/pages/orderdetail/orderdetail',

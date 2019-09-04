@@ -27,7 +27,11 @@ class Mine extends Component {
     super(props);
   }
 
-  componentWillMount() {}
+  componentWillMount() {
+    if (Object.keys(this.props.manageruserinfo.userinfo).length === 0) {
+      Taro.reLaunch({ url: "../login/login" });
+    }
+  }
 
   componentDidMount() {}
 

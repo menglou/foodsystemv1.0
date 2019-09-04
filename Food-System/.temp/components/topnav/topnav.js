@@ -22,10 +22,15 @@ export default class TopNav extends Component {
   componentDidShow() {}
 
   componentDidHide() {}
-  onNavigateBack = e => {
-    Taro.navigateBack({
-      delta: 1 //倒退
-    });
+  onNavigateBack = () => {
+
+    if (this.props.isloginpage == true) {
+      Taro.redirectTo({ url: '../../pages/index/index' });
+    } else {
+      Taro.navigateBack({
+        delta: 1 //倒退
+      });
+    }
   };
 
   render() {
@@ -33,7 +38,7 @@ export default class TopNav extends Component {
                     <View className={this.props.ishavedate == true ? "content-component" : "content-component-nodate"}>
                         <View className="nagator-component">
                             <View className="daohanwrrow-component">
-                               <View className={this.props.isdisplaynagator == true ? "at-icon at-icon-chevron-left" : "nagator-didden"} onClick={this.onNavigateBack.bind(this, this.props.navigatetourl)}>
+                               <View className={this.props.isdisplaynagator == true ? "at-icon at-icon-chevron-left" : "nagator-didden"} onClick={this.onNavigateBack}>
 
                                </View>
                             </View>

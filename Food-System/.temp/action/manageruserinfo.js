@@ -14,8 +14,10 @@ export const loginexits = () => {
   };
 };
 //登录保存登录信息
-export const login = () => {
+export const login = (accout, pwd) => {
   return {
-    type: LOGIN
+    type: LOGIN,
+    account: accout,
+    pwd: pwd
   };
 };

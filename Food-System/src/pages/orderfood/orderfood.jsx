@@ -12,14 +12,14 @@ import TabBar from '../../components/tabbar/tabbar'
 import {connect} from '@tarojs/redux'
   
 import  {addchangeselectedmeal,minuschangeselectedmeal,selectedaddchangeselectedmeal,selectedminuschangeselectedmeal,clearchangeselectedmeal,displayselectdfoodview} from '../../action/managerselectedfood'
-
+import {modifypwd,loginexits} from '../../action/manageruserinfo'
 
 
 const date=getNextPreDate(new Date())
 const tabList = [{ title: '早餐' }, { title: '中餐' }, { title: '晚餐' }]
 
-@connect(({ managerselectedfood }) => ({
-  managerselectedfood
+@connect(({ manageruserinfo,managerselectedfood, }) => ({
+  manageruserinfo,managerselectedfood
 }), (dispatch) => ({
   addchangeselectedmeal(e){
     dispatch(addchangeselectedmeal(e))
@@ -145,6 +145,30 @@ export default class OrderFood extends Component {
     }
 }
 
+//列表中报餐加
+ onAdd=(e)=>{
+    //点击加号之前检查是否登录
+     console.log(Object.keys(this.props.manageruserinfo.userinfo))
+     if(Object.keys(this.props.manageruserinfo.userinfo).length===0){
+
+        Taro.showModal({
+          title:'提示',
+          content:'您未登录，请登录'
+        }).then(res=>{
+           if(res.confirm){
+            Taro.redirectTo({url:'../login/login'})
+           }
+           else if(res.cancel){
+               //点击取消留在本页面
+           }
+        })
+     }
+     else{
+      this.props.addchangeselectedmeal(e)
+     }
+ }
+
+
   //报餐
   onMealFood=()=>{
     this.setState({
@@ -245,7 +269,7 @@ export default class OrderFood extends Component {
                                       <Text key={food.id} data-index={i} >{food.count}</Text>
                                     </View>
                                     <View className="addview">
-                                        <View className="btnadd" key={food.id} data-index={i} onClick={this.props.addchangeselectedmeal.bind(this,i)}>+</View>
+                                        <View className="btnadd" key={food.id} data-index={i} onClick={this.onAdd.bind(this,i)}>+</View>
                                     </View>
                               </View>
                               </View>

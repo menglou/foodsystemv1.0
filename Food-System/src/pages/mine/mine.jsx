@@ -29,7 +29,9 @@ export default class Mine extends Component{
     }
 
     componentWillMount () { 
-        
+        if(Object.keys( this.props.manageruserinfo.userinfo).length===0){
+            Taro.reLaunch({url:"../login/login"})
+        }
     }
   
     componentDidMount () { }

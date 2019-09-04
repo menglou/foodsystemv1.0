@@ -8,6 +8,13 @@ import wancan from "../../asset/image/wancan.png"
 import TabBar from '../../components/tabbar/tabbar'
 import TopNav from "../../components/topnav/topnav"
 
+import {connect} from '@tarojs/redux'
+
+@connect(({ manageruserinfo }) => ({
+      manageruserinfo
+    }), (dispatch) => ({
+    }))
+
 export default class MineMenu extends Component{
     config={
         navigationBarTitleText:"我的菜单"
@@ -19,7 +26,12 @@ export default class MineMenu extends Component{
     }
 
     componentWillMount () { 
-      
+          if(Object.keys(this.props.manageruserinfo.userinfo).length===0){
+             Taro.redirectTo({url:'../login/login'})
+          }
+          else{
+                //去加载菜单列表
+          }
       }
     
       componentDidMount () { }
