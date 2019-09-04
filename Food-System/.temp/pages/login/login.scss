@@ -129,8 +129,11 @@
 
 .tip-title{
     width: 100%;
-    height: 50%;
+    height: 30%;
     float: left;
+    position: absolute;
+    bottom: 0;
+   
 }
 .contents{
     width: 100%;
@@ -138,7 +141,7 @@
     height: 100px;
     //margin-top: 50%;
     position: relative;
-    top:80%
+    top:70%
 }
 .onecntent{
     width: 100%;

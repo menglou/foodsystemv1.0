@@ -103,7 +103,10 @@ class Login extends Component {
                                          立即登录
                                  </View>
                              </View>
-                             <View className="tip-title">
+                            
+                        </View>
+                   </View>
+                   <View className="tip-title">
                                 <View className="contents">
                                    <View className="onecntent">
                                        <View className="phone-icon">
@@ -116,9 +119,7 @@ class Login extends Component {
                                          常见问题
                                     </View>
                                 </View>
-                             </View>
-                        </View>
-                   </View>
+                    </View>
              </View>;
   }
 }
