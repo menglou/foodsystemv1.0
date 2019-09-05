@@ -30,7 +30,10 @@ text-align: left;
 width: 100%;
 float: left;
 height: 160px;
-
+position: absolute;
+top:0;
+left: 0;
+z-index: 2;
 }
 .daohanwrrow-component{
 width: 40%;
@@ -43,14 +46,17 @@ padding-left: 3%
 
 }
 .nagatortitle-component{
-width: 53.5%;
+width: 100%;
 float: left;
 height: 105px;
-text-align: left;
-font-size: 38px;
-color: #fff;
+position: absolute;
+top:0;
+left: 0;
+z-index: 1;
+text-align: center;
 padding-top: 55px;
-padding-left: 1.5%;
+font-size: 38px;
+ color: #fff;
 }
 
 
@@ -63,7 +69,9 @@ padding-left: 1.5%;
  float: left;
  height: 82px;
  background-color: #fb5554;
- padding-top: 8px; 
+ padding-top: 8px;
+ position: relative;
+ top: 160px;
 }
 .day-view-hidden{
     display: none

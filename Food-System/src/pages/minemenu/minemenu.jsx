@@ -77,9 +77,10 @@ export default class MineMenu extends Component{
                                     <View className="wheremeal">
                                          <View className="meal-icon">
                                             <Image src={zaocan} className="icon-image"></Image>
+                                            
                                          </View>
                                          <View className="wheremeal-name">
-                                               早餐
+                                              早餐
                                          </View>
                                     </View>
                                     <View className="totalmoney">

@@ -36,16 +36,18 @@ export default class TopNav extends Component {
   render() {
     return <View className="topnav-component">
                     <View className={this.props.ishavedate == true ? "content-component" : "content-component-nodate"}>
+                        <View className="nagatortitle-component">
+                                 {this.props.title}
+                        </View>
                         <View className="nagator-component">
                             <View className="daohanwrrow-component">
                                <View className={this.props.isdisplaynagator == true ? "at-icon at-icon-chevron-left" : "nagator-didden"} onClick={this.onNavigateBack}>
 
                                </View>
                             </View>
-                            <View className="nagatortitle-component">
-                                 {this.props.title}
-                            </View>
+                           
                         </View>
+                       
                         <View className={this.props.isdisplaydaydate == true ? "day-view" : "day-view-hidden"}>
                                     <View className="day-view-content">
                                         <View className="day-date-view">

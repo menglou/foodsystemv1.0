@@ -93,7 +93,7 @@ export default class Login extends Component{
                                         <AtIcon value='user' size='20' color='#999999'></AtIcon>
                                      </View>
                                      <View className="account-input">
-                                         <Input placeholder="个人账号" type="text" onInput={this.onAccountInput.bind(this)}  value={this.state.account}></Input>
+                                         <Input className="inputs" placeholder="个人账号" type="text" onInput={this.onAccountInput.bind(this)}  value={this.state.account}></Input>
                                      </View>
                                  </View>
                                  <View className="pwd">
@@ -101,7 +101,7 @@ export default class Login extends Component{
                                         <AtIcon value='lock' size='20' color='#999999'></AtIcon>
                                      </View>
                                      <View className="pwd-input">
-                                         <Input placeholder="密码" password={true}  onInput={this.onPwdInput.bind(this)} value={this.state.pwd}></Input>
+                                         <Input className="inputs" placeholder="密码" password={true}  onInput={this.onPwdInput.bind(this)} value={this.state.pwd}></Input>
                                      </View>
                                  </View>
                                  <View className="modify-pwd">
