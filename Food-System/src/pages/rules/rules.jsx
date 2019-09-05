@@ -1,10 +1,12 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text,Button,Picker,Input,Image} from '@tarojs/components'
+
 import {AtList, AtListItem} from "taro-ui"
 import TopNav from "../../components/topnav/topnav"
 import './rules.scss'
 
-import TabBar from "../../components/tabbar/tabbar"
+
+
 
 export default class Rules extends Component{
     config={
@@ -37,13 +39,13 @@ export default class Rules extends Component{
                    <View className="rules-content">
                        <View className="rule-content-detial">
                                 <AtList>
-                                        <AtListItem  title='报餐规则' extraText='只可预定第二天及以后的菜品' />
-                                        <AtListItem  title='早餐报餐时间' extraText='当日早上5点前' />
-                                        <AtListItem  title='早餐就餐时间' extraText='7:00-8:00' />
-                                        <AtListItem  title='午餐报餐时间' extraText='当日早上9点前' />
-                                        <AtListItem  title='午餐就餐时间' extraText='11:00-13:00' />
-                                        <AtListItem  title='晚餐报餐时间' extraText='当日早上15点前' />
-                                        <AtListItem  title='晚餐就餐时间' extraText='17:00-19:00' />
+                                        <AtListItem  className="ruleitem" title='报餐规则' extraText='只可预定第二天及以后的菜品' />
+                                        <AtListItem className="ruleitem"  title='早餐报餐时间' extraText='当日早上5点前' />
+                                        <AtListItem  className="ruleitem" title='早餐就餐时间' extraText='7:00-8:00' />
+                                        <AtListItem  className="ruleitem" title='午餐报餐时间' extraText='当日早上9点前' />
+                                        <AtListItem  className="ruleitem" title='午餐就餐时间' extraText='11:00-13:00' />
+                                        <AtListItem  className="ruleitem" title='晚餐报餐时间' extraText='当日早上15点前' />
+                                        <AtListItem className="ruleitem"  title='晚餐就餐时间' extraText='17:00-19:00' />
                                 </AtList>
                                 <View className="tipview">
                                     <View className="tipicon at-icon at-icon-alert-circle">

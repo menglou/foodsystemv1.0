@@ -1,6 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text,Button,Picker,Input,Image} from '@tarojs/components'
-import './orderfood.scss'
+
 import icon from '../../asset/image/index.jpg'
 import orderfoodsuccess from '../../asset/image/mealmodel.png'
 import {AtTabs, AtTabsPane,AtIcon,AtBadge,AtFloatLayout,AtCurtain,AtButton } from "taro-ui"
@@ -13,6 +13,9 @@ import {connect} from '@tarojs/redux'
   
 import  {addchangeselectedmeal,minuschangeselectedmeal,selectedaddchangeselectedmeal,selectedminuschangeselectedmeal,clearchangeselectedmeal,displayselectdfoodview} from '../../action/managerselectedfood'
 import {modifypwd,loginexits} from '../../action/manageruserinfo'
+import './orderfood.scss'
+
+
 
 
 const date=getNextPreDate(new Date())

@@ -3,11 +3,11 @@ import Taro, { Component } from "@tarojs/taro-h5";
 import { View, Input, Image } from '@tarojs/components';
 import { AtIcon } from 'taro-ui';
 import TopNav from "../../components/topnav/topnav";
-import './login.scss';
 import bg from '../../asset/image/canyin-bg.jpg';
 
 import { connect } from "@tarojs/redux-h5";
 import { modifypwd, loginexits, login } from '../../action/manageruserinfo';
+import './login.scss';
 
 export default @connect(({ manageruserinfo }) => ({
   manageruserinfo

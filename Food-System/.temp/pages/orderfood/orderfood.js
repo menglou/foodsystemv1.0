@@ -1,7 +1,7 @@
 import Nerv from "nervjs";
 import Taro, { Component } from "@tarojs/taro-h5";
 import { View, Text, Button, Picker, Input, Image } from '@tarojs/components';
-import './orderfood.scss';
+
 import icon from '../../asset/image/index.jpg';
 import orderfoodsuccess from '../../asset/image/mealmodel.png';
 import { AtTabs, AtTabsPane, AtIcon, AtBadge, AtFloatLayout, AtCurtain } from "taro-ui";
@@ -13,6 +13,7 @@ import { connect } from "@tarojs/redux-h5";
 
 import { addchangeselectedmeal, minuschangeselectedmeal, selectedaddchangeselectedmeal, selectedminuschangeselectedmeal, clearchangeselectedmeal, displayselectdfoodview } from '../../action/managerselectedfood';
 
+import './orderfood.scss';
 
 const date = getNextPreDate(new Date());
 const tabList = [{ title: '早餐' }, { title: '中餐' }, { title: '晚餐' }];

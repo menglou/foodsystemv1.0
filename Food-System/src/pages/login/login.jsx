@@ -2,11 +2,13 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Text,Button,Picker,Input,Image} from '@tarojs/components'
 import { AtIcon } from 'taro-ui'
 import TopNav from "../../components/topnav/topnav"
-import './login.scss'
 import bg from '../../asset/image/canyin-bg.jpg'
 
 import {connect} from '@tarojs/redux'
 import {modifypwd,loginexits,login} from '../../action/manageruserinfo'
+import './login.scss'
+
+
 
 @connect(({ manageruserinfo }) => ({
     manageruserinfo

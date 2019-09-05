@@ -1,15 +1,13 @@
 import Nerv from "nervjs";
 import Taro, { Component } from "@tarojs/taro-h5";
 import { View, Image } from '@tarojs/components';
-import './index.scss';
 import startoderdood from '../../asset/image/startoderdood.png';
 import rules from '../../asset/image/rules.png';
 import mymenu from '../../asset/image/mymenu.png';
 import mine from '../../asset/image/mine.png';
 import gonggao from '../../asset/image/gonggao.png';
-
 import TopNav from "../../components/topnav/topnav";
-
+import './index.scss';
 
 const tabList = [{ title: '早餐' }, { title: '中餐' }, { title: '晚餐' }];
 

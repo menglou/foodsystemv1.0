@@ -4,6 +4,9 @@ import {AtList, AtListItem} from "taro-ui"
 import TopNav from "../../components/topnav/topnav"
 import './notice.scss'
 
+
+
+
 export default class Notice extends Component{
     config={
         navigationBarTitleText:"公告"
@@ -41,15 +44,15 @@ export default class Notice extends Component{
                    <View className="notice-content">
                        <View className="notice-content-detail">
                             <AtList>
-                                        <AtListItem title='报餐规则调整通知' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:
+                                        <AtListItem className="noticeitem" title='报餐规则调整通知' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:
                                             25, color: '#fb4241', value: 'volume-plus', }} onClick={this.onSeeNoticeDetail} />
-                                            <AtListItem title='早餐报餐时间更改通知' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:
+                                            <AtListItem className="noticeitem" title='早餐报餐时间更改通知' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:
                                             25, color: '#fb4241', value: 'volume-plus', }} onClick={this.onSeeNoticeDetail} /> 
-                                            <AtListItem title='早餐就餐时间公告' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:
+                                            <AtListItem className="noticeitem" title='早餐就餐时间公告' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:
                                             25, color: '#fb4241', value: 'volume-plus', }} onClick={this.onSeeNoticeDetail} /> 
-                                            <AtListItem title='午餐报餐时间公告' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:
+                                            <AtListItem className="noticeitem" title='午餐报餐时间公告' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:
                                             25, color: '#fb4241', value: 'volume-plus', }} onClick={this.onSeeNoticeDetail} /> 
-                                            <AtListItem title='午餐就餐时间公告' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:
+                                            <AtListItem className="noticeitem" title='午餐就餐时间公告' note='2019-8-8  8:00' arrow='right' iconInfo={{ size:
                                             25, color: '#fb4241', value: 'volume-plus', }} onClick={this.onSeeNoticeDetail} />  
                                 </AtList>
                        </View>

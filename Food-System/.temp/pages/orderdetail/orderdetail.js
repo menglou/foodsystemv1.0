@@ -1,6 +1,7 @@
 import Nerv from "nervjs";
 import Taro, { Component } from "@tarojs/taro-h5";
 import { View, Image } from '@tarojs/components';
+
 import TopNav from "../../components/topnav/topnav";
 import './orderdetail.scss';
 

@@ -3,6 +3,7 @@ import Taro, { Component } from "@tarojs/taro-h5";
 import { View } from '@tarojs/components';
 
 import TopNav from "../../components/topnav/topnav";
+
 import './noticedetail.scss';
 
 export default class NoticeDetail extends Component {

@@ -1,7 +1,10 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text,Button,Picker,Input,Image} from '@tarojs/components'
+
+
 import TopNav from "../../components/topnav/topnav"
 import   './orderdetail.scss'
+
 
 import shujiao from "../../asset/food/6.jpg"
 

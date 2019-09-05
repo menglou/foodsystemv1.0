@@ -1,16 +1,12 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text,Button,Picker,Input,Image} from '@tarojs/components'
-import './index.scss'
 import startoderdood from '../../asset/image/startoderdood.png'
 import rules from '../../asset/image/rules.png'
 import mymenu from '../../asset/image/mymenu.png'
 import mine from '../../asset/image/mine.png'
 import gonggao from '../../asset/image/gonggao.png'
-
-
-import TabBar from '../../components/tabbar/tabbar'
 import TopNav from "../../components/topnav/topnav"
-import {AtNavBar,AtTabs, AtTabsPane,AtIcon,AtList,AtListItem,AtBadge,AtFloatLayout,AtActionSheet, AtActionSheetItem } from "taro-ui"
+import './index.scss'
 
 
 const tabList = [{ title: '早餐' }, { title: '中餐' }, { title: '晚餐' }]

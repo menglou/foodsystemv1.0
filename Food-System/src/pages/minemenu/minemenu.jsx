@@ -1,14 +1,18 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text,Button,Picker,Input,Image} from '@tarojs/components'
-import './minemenu.scss'
+
 import zaocan from "../../asset/image/zaocan.png"
 import wucan from "../../asset/image/wancan.png"
 import wancan from "../../asset/image/wancan.png"
 
-import TabBar from '../../components/tabbar/tabbar'
+
 import TopNav from "../../components/topnav/topnav"
 
 import {connect} from '@tarojs/redux'
+
+import './minemenu.scss'
+
+
 
 @connect(({ manageruserinfo }) => ({
       manageruserinfo

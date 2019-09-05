@@ -1,3 +1,5 @@
+
+
 .container-rule{
     position: absolute;
     left: 0;
@@ -30,26 +32,35 @@
    // margin-bottom: 100px;
 }
 
+
+
 .at-list__item{
     padding: 45px 0px;
     font-size: 33px;
+    border-bottom: 1px solid #eeeeee;
+    
 }
 
+// .ruleitem{
+//     padding: 45px 0px;
+//     font-size: 33px;
+//     border-bottom: 1px solid #eeeeee
+// }
 .at-list__item .item-extra__info{
     font-size: 30px;
     text-align: right;
     padding-right: 0px;
+   
 }
 
 .at-list__item-content{
-    margin-right: 0px
+    margin-right: 0px;
+    //position: relative;
 }
 .at-list__item::after{
     border: 0;
 }
-.at-list__item{
-  border-bottom: 1px solid #eeeeee
-}
+
 
 .at-list::after{
     border-bottom-width: 0px;
@@ -69,3 +80,4 @@
      font-size: 26px;
      color: #b9b9b9;
 }
+

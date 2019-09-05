@@ -1,9 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
+
 import Index from './pages/index'
-import "taro-ui/dist/style/index.scss"
 import './app.scss'
-import TabBar from './components/tabbar/tabbar'
-import { View } from '@tarojs/components';
+
 
 import {Provider} from '@tarojs/redux'
 
@@ -11,7 +10,6 @@ import configStore from './store/index'
 
 const store = configStore()
 
-import verifyLogin from './util/checklogin'
 
 
 // 如果需要在 h5 环境中开启 React Devtools

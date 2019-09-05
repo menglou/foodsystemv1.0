@@ -1,13 +1,14 @@
 import Nerv from "nervjs";
 import Taro, { Component } from "@tarojs/taro-h5";
 import { View } from '@tarojs/components';
-import './mine.scss';
+
 import TopNav from '../../components/topnav/topnav';
 
 import { AtAvatar, AtList, AtListItem } from 'taro-ui';
 
 import { connect } from "@tarojs/redux-h5";
 import { modifypwd, loginexits } from '../../action/manageruserinfo';
+import './mine.scss';
 
 export default @connect(({ manageruserinfo }) => ({
   manageruserinfo
@@ -29,7 +30,7 @@ class Mine extends Component {
 
   componentWillMount() {
     if (Object.keys(this.props.manageruserinfo.userinfo).length === 0) {
-      Taro.reLaunch({ url: "../login/login" });
+      Taro.redirectTo({ url: "../login/login" });
     }
   }
 
@@ -85,10 +86,10 @@ class Mine extends Component {
                         </View>
                         <View className="mine-content-list">
                             <AtList>
-                                <AtListItem title="密码修改" arrow="right" onClick={this.AtListClick.bind(this, "modifypwd")} />
+                                <AtListItem className="mineitem" title="密码修改" arrow="right" onClick={this.AtListClick.bind(this, "modifypwd")} />
                             </AtList>
                             <AtList>
-                                <AtListItem title="退出登录" arrow="right" onClick={this.AtListClick.bind(this, "loginexits")} />
+                                <AtListItem className="mineitem" title="退出登录" arrow="right" onClick={this.AtListClick.bind(this, "loginexits")} />
                             </AtList>
                         </View>
                      </View>

@@ -1,12 +1,15 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text,Button,Picker,Input,Image} from '@tarojs/components'
-import './mine.scss'
+
 import TopNav from '../../components/topnav/topnav'
 import cxk from "../../asset/image/cxk.gif"
 import { AtAvatar ,AtList, AtListItem } from 'taro-ui'
 
 import {connect} from '@tarojs/redux'
 import {modifypwd,loginexits} from '../../action/manageruserinfo'
+import './mine.scss'
+
+
 
 @connect(({ manageruserinfo }) => ({
     manageruserinfo
@@ -30,7 +33,7 @@ export default class Mine extends Component{
 
     componentWillMount () { 
         if(Object.keys( this.props.manageruserinfo.userinfo).length===0){
-            Taro.reLaunch({url:"../login/login"})
+            Taro.redirectTo({url:"../login/login"})
         }
     }
   
@@ -101,10 +104,10 @@ export default class Mine extends Component{
                         </View>
                         <View className="mine-content-list">
                             <AtList>
-                                <AtListItem title='密码修改' arrow='right' onClick={this.AtListClick.bind(this,"modifypwd")} />
+                                <AtListItem className="mineitem" title='密码修改' arrow='right' onClick={this.AtListClick.bind(this,"modifypwd")} />
                             </AtList>
                             <AtList>
-                                <AtListItem title='退出登录' arrow='right' onClick={this.AtListClick.bind(this,"loginexits")} />
+                                <AtListItem className="mineitem" title='退出登录' arrow='right' onClick={this.AtListClick.bind(this,"loginexits")} />
                             </AtList>
                         </View>
                      </View>

@@ -1,8 +1,13 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text,Button,Picker,Input,Image} from '@tarojs/components'
-import {AtList, AtListItem} from "taro-ui"
+
+
 import TopNav from "../../components/topnav/topnav"
+
 import './noticedetail.scss'
+
+
+
 
 export default class NoticeDetail extends Component{
     config={

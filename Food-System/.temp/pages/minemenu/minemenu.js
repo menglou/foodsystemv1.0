@@ -1,7 +1,7 @@
 import Nerv from "nervjs";
 import Taro, { Component } from "@tarojs/taro-h5";
 import { View, Image } from '@tarojs/components';
-import './minemenu.scss';
+
 import zaocan from "../../asset/image/zaocan.png";
 import wucan from "../../asset/image/wancan.png";
 import wancan from "../../asset/image/wancan.png";
@@ -9,6 +9,8 @@ import wancan from "../../asset/image/wancan.png";
 import TopNav from "../../components/topnav/topnav";
 
 import { connect } from "@tarojs/redux-h5";
+
+import './minemenu.scss';
 
 export default @connect(({ manageruserinfo }) => ({
   manageruserinfo

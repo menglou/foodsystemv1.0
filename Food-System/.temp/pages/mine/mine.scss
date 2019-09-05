@@ -1,3 +1,6 @@
+
+
+
 .container-mine{
     position: absolute;
     left: 0;
@@ -70,34 +73,46 @@
     margin-top: 40px;
 }
 
+.at-list{
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+
+
+.mineitem{
+    font-size: 33px;
+    padding: 38px 24px;
+    font-family: "微软雅黑";
+}
+
 .at-list__item-content{
     margin-right: -400px;
 }
-.at-list__item {
-   font-size: 33px;
-   padding: 38px 24px;
-   font-family: "微软雅黑";
-   border: 0px;
-}
+// .at-list__item {
+//    font-size: 33px;
+//    padding: 38px 24px;
+//    font-family: "微软雅黑";
+//    //border: 0px;
+// }
+
+
 
 .at-list__item .item-extra__icon-arrow{
     font-size: 55px;
 }
-.at-list{
-   margin-bottom: 18px;
-   //border:1px solid #fff;
+// .at-list{
+ 
+//    //border:1px solid #fff;
   
-}
+// }
 
 .at-list__item::after{
    border-bottom:0px;
    
-}
-.at-list{
-    border-radius: 10px;
 }
 
 .at-list::after{
     border-bottom-width: 0px;
     border-top-width: 0px;
 }
+

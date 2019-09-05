@@ -1,8 +1,6 @@
 import Taro, { Component } from "@tarojs/taro-h5";
 
-import "taro-ui/dist/style/index.scss";
 import './app.scss';
-
 
 import { Provider } from "@tarojs/redux-h5";
 
@@ -93,8 +91,7 @@ class App extends Component {
             isIndex: false
           }, {
             path: '/pages/minemenu/minemenu',
-            componentLoader: () => import( /* webpackChunkName: "minemenu_minemenu" */
-            './pages/minemenu/minemenu'),
+            componentLoader: () => import( /* webpackChunkName: "minemenu_minemenu" */'./pages/minemenu/minemenu'),
             isIndex: false
           }, {
             path: '/pages/orderdetail/orderdetail',
