@@ -1,90 +1,19 @@
-.container-notice{
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 1;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-     -webkit-box-sizing: border-box;
-     box-sizing: border-box;
-}
-
-.notice-content{
-    overflow-y: scroll;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    margin-top:160px ;
-   
-}
-.notice-content-detail{
-    width: 96%;
-    margin:  0px 2% 100px 2%;
-    padding: 0px;
-    height: 100%;
-    //margin-bottom: 100px;
-}
-
-// .at-list__item{
-//     padding: 25px 0px;
-//     font-size: 33px;
-//     border-bottom: 1px solid #eeeeee
-// }
-.noticeitem{
-    padding: 25px 0px;
-    font-size: 33px;
-    border-bottom: 1px solid #eeeeee
-}
-
-
-.at-list__item .item-content__info-note{
+.item-content__info-note{
     font-size: 29px;
 }
-.at-list__item .item-extra__icon-arrow{
+ .item-extra__icon-arrow{
     font-size: 58px;
 }
 
-// .at-list__item .item-extra__info{
-//     font-size: 30px;
-//     text-align: right;
-//     padding-right: 0px;
-// }
-
-.at-list__item-content{
-   // margin-right: -400px
-}
 .at-list__item::after{
     border: 0;
 }
-// .at-list__item{
-  
-// }
 
-.at-list__item .item-extra__icon{
+ .item-extra__icon{
     right: -1px;
 }
 
 .at-list::after{
     border-bottom-width: 0px;
     border-top-width: 0px;
-}
-
-.tipview{
-    width: 100%;
-    float: left;
-    margin-top:60px;
-}
-.tipicon{
-    font-size: 30px;
-     float: left;
-     padding-top: 4px;
-}
-.tiptltle{
-    float: left;
-    font-size: 26px;
-    margin-left: 8px;
-    color: #b9b9b9;
 }

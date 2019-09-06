@@ -8,6 +8,7 @@ import { AtAvatar, AtList, AtListItem } from 'taro-ui';
 
 import { connect } from "@tarojs/redux-h5";
 import { modifypwd, loginexits } from '../../action/manageruserinfo';
+import styles from './mine.module.scss';
 import './mine.scss';
 
 export default @connect(({ manageruserinfo }) => ({
@@ -65,31 +66,31 @@ class Mine extends Component {
   };
 
   render() {
-    return <View className="container-mine">
+    return <View className={styles.containermine}>
                  <TopNav isdisplaynagator={false} title="个人中心" isdisplaydaydate={false} ishavedate={false}></TopNav>
-                 <View className="mine-content">
-                     <View className="mine-info">
-                        <View className="mine-content-header">
-                            <View className="mine-info-avatar">
-                                <View className="mineavator-view">
+                 <View className={styles.minecontent}>
+                     <View className={styles.mineinfo}>
+                        <View className={styles.minecontentheader}>
+                            <View className={styles.mineinfoavatar}>
+                                <View className={styles.mineavatorview}>
                                    <AtAvatar image={this.props.manageruserinfo.userinfo.image} size="small" circle={true}></AtAvatar>
                                 </View>
                             </View>
-                            <View className="mine-info-desc">
-                                    <View className="mine-info-desc-name">
+                            <View className={styles.mineinfodesc}>
+                                    <View className={styles.mineinfodescname}>
                                          {this.props.manageruserinfo.userinfo.name}
                                     </View>
-                                    <View className="mine-info-desc-comp">
+                                    <View className={styles.mineinfodesccomp}>
                                          {this.props.manageruserinfo.userinfo.decription}
                                     </View>
                             </View>
                         </View>
-                        <View className="mine-content-list">
+                        <View className={styles.minecontentlist}>
                             <AtList>
-                                <AtListItem className="mineitem" title="密码修改" arrow="right" onClick={this.AtListClick.bind(this, "modifypwd")} />
+                                <AtListItem className={styles.mineitem} title="密码修改" arrow="right" onClick={this.AtListClick.bind(this, "modifypwd")} />
                             </AtList>
                             <AtList>
-                                <AtListItem className="mineitem" title="退出登录" arrow="right" onClick={this.AtListClick.bind(this, "loginexits")} />
+                                <AtListItem className={styles.mineitem} title="退出登录" arrow="right" onClick={this.AtListClick.bind(this, "loginexits")} />
                             </AtList>
                         </View>
                      </View>

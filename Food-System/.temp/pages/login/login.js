@@ -7,7 +7,8 @@ import bg from '../../asset/image/canyin-bg.jpg';
 
 import { connect } from "@tarojs/redux-h5";
 import { modifypwd, loginexits, login } from '../../action/manageruserinfo';
-import './login.scss';
+import androidinput from '../../util/androidinput';
+import styles from './login.module.scss';
 
 export default @connect(({ manageruserinfo }) => ({
   manageruserinfo
@@ -34,7 +35,9 @@ class Login extends Component {
     };
   }
 
-  componentWillMount() {}
+  componentWillMount() {
+    androidinput();
+  }
 
   componentDidMount() {}
 
@@ -54,7 +57,7 @@ class Login extends Component {
     this.props.login(this.state.account, this.state.pwd);
     if (Object.keys(this.props.manageruserinfo.userinfo).length !== 0) {
       Taro.hideLoading();
-      Taro.redirectTo({ url: '../mine/mine' });
+      Taro.redirectTo({ url: '../index/index' });
     }
   };
 
@@ -72,49 +75,49 @@ class Login extends Component {
   };
 
   render() {
-    return <View className="container-login">
+    return <View className={styles.containerlogin}>
                   <TopNav isdisplaynagator={true} title="登录" isloginpage={true} isdisplaydaydate={false} ishavedate={false}></TopNav>
-                  <View className="loginconetnt-bg">
-                       <Image src={bg} className="loginconetnt-bg-img"></Image>
+                  <View className={styles.loginconetntbg}>
+                       <Image src={bg} className={styles.loginconetntbgimg}></Image>
                   </View>
-                   <View className="loginconetnt">
-                        <View className="login-form">
-                             <View className="form-input">
-                                 <View className="account">
-                                     <View className="account-icon">
+                   <View className={styles.loginconetnt}>
+                        <View className={styles.loginform}>
+                             <View className={styles.forminput}>
+                                 <View className={styles.account}>
+                                     <View className={styles.accounticon}>
                                         <AtIcon value="user" size="20" color="#999999"></AtIcon>
                                      </View>
-                                     <View className="account-input">
-                                         <Input className="inputs" placeholder="个人账号" type="text" onInput={this.onAccountInput.bind(this)} value={this.state.account}></Input>
+                                     <View className={styles.accountinput}>
+                                         <Input className={styles.inputs} placeholder="个人账号" type="text" onInput={this.onAccountInput.bind(this)} value={this.state.account}></Input>
                                      </View>
                                  </View>
-                                 <View className="pwd">
-                                     <View className="pwd-icon">
+                                 <View className={styles.pwd}>
+                                     <View className={styles.pwdicon}>
                                         <AtIcon value="lock" size="20" color="#999999"></AtIcon>
                                      </View>
-                                     <View className="pwd-input">
-                                         <Input className="inputs" placeholder="密码" password={true} onInput={this.onPwdInput.bind(this)} value={this.state.pwd}></Input>
+                                     <View className={styles.pwdinput}>
+                                         <Input className={styles.inputs} placeholder="密码" password={true} onInput={this.onPwdInput.bind(this)} value={this.state.pwd}></Input>
                                      </View>
                                  </View>
-                                 <View className="modify-pwd">
+                                 <View className={styles.modifypwd}>
                                       密码修改
                                  </View>
-                                 <View className="login-btn-view" onClick={this.onLogin}>
+                                 <View className={styles.loginbtnview} onClick={this.onLogin}>
                                          立即登录
                                  </View>
                              </View>
                             
                         </View>
                    </View>
-                   <View className="tip-title">
-                                <View className="contents">
-                                   <View className="onecntent">
-                                       <View className="phone-icon">
+                   <View className={styles.tiptitle}>
+                                <View className={styles.contents}>
+                                   <View className={styles.onecntent}>
+                                       <View className={styles.phoneicon}>
                                            <AtIcon value="phone" size="20" color="#eee"></AtIcon>
                                              客户服务热线：0510-88568485
                                        </View>
                                     </View>
-                                    <View className="twocntent">
+                                    <View className={styles.twocntent}>
                                       <AtIcon value="help" size="20" color="#d9d8d8"></AtIcon>
                                          常见问题
                                     </View>

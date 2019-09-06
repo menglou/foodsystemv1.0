@@ -1,0 +1,678 @@
+
+.containerview{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+   
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+}
+
+ .topnav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+  
+}
+.content{
+width: 100%;
+height: 275px;
+background-color: #fb5554;
+margin: 0px auto;
+padding: 0px;
+text-align: left;
+}
+.nagator{
+width: 100%;
+float: left;
+height: 160px;
+
+}
+.daohanwrrow{
+width: 45%;
+float: left;
+height: 160px;
+}
+.nagatortitle{
+width: 55%;
+float: left;
+height: 120px;
+
+font-size: 38px;
+color: #fff;
+padding-top: 40px
+}
+
+
+//星期导航
+.daychangeview{
+width: 100%;
+float: left;
+background-color: #fb5554;
+height: 115px;
+padding: 0xp;
+}
+
+.daychangeviewcontent{
+width: 100%;
+height: 115px;
+background-color: #fb5554
+}
+//前一天view
+.prevdayview{
+width: 15%;
+float: left;
+background-color: #fb5554;
+.prebtn{
+    font-size: 29px;
+    height: 75px;
+    padding-top: 17px;
+    padding-bottom: 20px;
+    text-align: right;
+    color: #fff;
+
+}
+}
+//时间view
+.dayviews{
+width: 70%;
+float: left;
+background-color: #fb5554;
+padding-bottom: 20px;
+}
+
+.picker{
+width: 100%;
+height: 90px;
+
+}
+.calendariconview{
+width: 22%;
+float: left;
+height: 75px;
+text-align: right;
+padding-right: 10px
+}
+.datedisplayview{
+width: 55%;
+
+float: left;
+font-size: 35px;
+color: #fff;
+padding-top: 14px;
+height: 58px;
+text-align: center
+}
+
+.inputdate{
+    pointer-events: none;
+}
+.chevrondowniconview{
+width: 15%;
+float: left;
+height: 75px;
+padding-left: 10px
+}
+
+//后一天
+.nextdayview{
+width: 15%;
+float: left;
+background-color: #fb5554;
+.nextbtn{
+    font-size: 29px;
+    color: #fff;
+    height: 75px;
+    padding-top: 17px;
+    padding-bottom: 20px;
+}
+}
+
+
+
+//tab标签页
+
+.tabview{
+      
+        overflow-y: scroll;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin-top: 275px;
+        background-color: #fff;
+}
+
+.at-tabs__item{
+    padding: 20px 24px;
+    font-size: 34px;
+    font-family: "微软雅黑";
+    }
+    
+    .at-tabs{
+        overflow-y: scroll;
+        overflow-x: hidden;
+        //margin-bottom: 250px;
+        .at-tabs__body{
+            margin-bottom: 430px;
+        }
+    }
+    
+    // .at-tabs-pane--active{
+    //    // margin-bottom: 120px;
+    // }
+    
+
+.fooddisplayview{
+background-color: #fff;
+text-align: center;
+font-size:20px;
+padding: 20px 5%;
+width: 90%;
+float: left;
+
+}
+.line{
+width: 90%;
+margin-left: 5%;
+margin-right: 5%;
+height: 2px;
+background-color: #eee;
+float: left;
+}
+//图片view
+.imageview{
+width: 160px;
+height: 160px;
+float: left;
+border-radius: 10px;
+    border: 0px;
+   padding: 0px;
+}
+//image class
+ .foodimg{
+width: 160px;
+height: 160px;
+margin-top: 8px;
+border-radius: 10px;
+border: 0;
+}
+
+//视频信息描述view
+.fooddescription{
+width: 40%;
+float: left;
+padding-left: 30px
+}
+
+.foodname{
+width: 100%;
+float: left;
+text-align: left;
+margin-bottom: 25px;
+font-size: 38px;
+font-family: "黑体"
+}
+.foodprice{
+width: 100%;
+float: left;
+text-align: left;
+margin-top: 25px;
+font-size: 38px;
+color: #fb5554
+}
+
+.btnview{
+width: 28%;
+float: left;
+height: 78px;
+padding-top: 65px;
+}
+//减所在的view
+.jianview{
+width: 27%;
+height: 46px;
+float: left;
+margin-top: 8px;
+text-align: center
+}
+//减号button
+.btnjian{
+width: 45px;
+height: 46px;
+border-radius: 500px;
+background-color: #666666;
+font-size: 28px;
+color: #fff;
+text-align: center
+}
+//隐藏减号按钮
+.btnjianhidden{
+display: none;
+}
+
+.countview{
+width: 45%;
+float: left;
+height: 52px;
+text-align: center;
+// margin-left: 35px;
+// margin-right: 20px;
+font-size: 38px;
+margin-top: 0px;
+}
+//隐藏数量显示
+.countviewhidden{
+display: none;
+}
+
+//加所在的view
+.addview{
+width: 27%;
+height: 46px;
+float: right;
+margin-top: 8px;
+text-align: center
+}
+//加号的button
+.btnadd{
+width: 45px;
+height: 46px;
+border-radius: 500px;
+background-color: #fb5554;
+font-size: 27px;
+padding-left: 1px;
+color: #fff
+}
+
+
+//饱餐导航view
+.mealfoodviewbottonnavr{
+width: 100%;
+background-color:#fafafa;
+//height:182px;
+position: fixed;
+bottom:0;
+left: 0;
+z-index: 810;
+overflow:hidden;
+margin-bottom:50PX;
+}
+//隐藏报餐导航
+.mealfoodviewbottonnavrhidden{
+display: none;
+}
+
+
+.mealfoodcontent{
+   
+width: 100%;
+height: 160px;
+margin: 0 auto;
+border-top:1px solid #eee
+}
+
+.leftcontentview{
+width: 60%;
+float: left;
+height: 160px;
+padding-left: 20px;
+}
+.bageicon{
+width: 100px;
+
+float: left;
+padding: 40px 0px 60px 0px
+}
+.iconimage{
+width: 60px;
+height: 60px;
+border-radius: 500px;
+}
+.totalmoneyview{
+width: 120px;
+float: left;
+margin-left: 40px;
+font-size: 40px;
+padding: 50px 0px 60px 0px
+}
+
+.submitbuyfoodview{
+float: right;
+background-color: #fb5554;
+height: 60px;
+color: #fff;
+width: 270px;
+padding: 40px 0px 60px 0px;
+text-align: center
+}
+
+
+
+
+// .at-action-sheet__container{
+//     margin-bottom: 160px;
+// }
+
+
+
+//悬浮窗
+
+// .at-float-layout .layout-body__content {
+//  max-height: 500px; 
+// min-height: 190px;
+// height: auto;
+
+// }
+
+// .at-float-layout__container{
+// min-height: 190px;
+// height: auto;
+// max-height: 500px;
+// font-size: 20px;
+// height: auto;
+
+// }
+// .at-float-layout .layout-body{
+// min-height: 190px;
+// max-height: 500px;
+// font-size: 20px;
+// max-height: auto;
+// height: auto;
+// padding: 0px;
+// margin: 0px;
+// }
+// .at-float-layout__container.layout {
+// margin:0px 0px 160px 0px;
+// padding: 0px;
+// }
+// .at-float-layout__overlay{
+// height: 85%;
+// }
+// .at-float-layout{
+// z-index: 800;
+// overflow:scroll;
+// }
+
+
+.xuanfu{
+    width: 100%;
+   
+}
+.xuanfuhidden{
+    width: 100%;
+    display: none
+}
+
+//悬浮窗内的内容
+.floatviewcontainer{
+width: 100%;
+margin: 0 auto;
+}
+
+//悬浮窗中第一行内容
+.onerowcontent{
+width: 100%;
+float: left;
+height: 75px;
+border-bottom: 1px solid #eee;
+}
+//悬浮窗中第一行内容左面的内容
+.leftonerowcontent{
+width: 65%;
+float: left;
+text-align: left;
+height: 60px;
+font-size: 28px;
+padding-top: 15px;
+margin-left: 40px;
+}
+//悬浮窗中第一行内容右面的内容
+.rightonerowcontent{
+width: 25%;
+float: left;
+height: 75px;
+}
+.deleiconview{
+width: 120px;
+float: left;
+height: 60px;
+padding-top: 15px;
+text-align: right
+}
+.celarlistview{
+width: 60px;
+float: left;
+height: 60px;
+padding-top: 15px;
+text-align: right;
+font-size: 25px;
+}
+.tworowcontent{
+    width: 100%;
+    float: left;
+    margin-bottom: 90px;
+}
+
+.selectedfooddisplayview{
+    width: 93%;
+    margin: 0 1% 0 6% ;
+    float: left;
+    height: 140px;
+}
+
+.selectedfooddescription{
+    width: 55%;
+    float: left;
+    height: 140px;
+}
+.selectedfoodname{
+    width: 70%;
+    float: left;
+    text-align: left;
+    font-size: 30px;
+    height:70px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    
+}
+.selectedfoodprice{
+    width: 30%;
+    font-size: 35px;
+    color: #fb5554;
+    text-align: right;
+    float: left;
+    height:70px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.selectedbtnview{
+    width: 40%;
+    margin-left: 5%;
+    float: left;
+    height: 140px;
+}
+.selectedjianview{
+    width: 32%;
+    height: 67px;
+    float: left;
+    padding-top: 43px;
+    padding-bottom: 30px;
+}
+.selectedtnjian{
+    width: 45px;
+    height: 45px;
+    border-radius: 500px;
+    background-color: #666666;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    margin-left: 45px;
+    float: left;
+}
+
+.selectedcountview{
+    width: 33%;
+    height: 140px;
+    float: left;
+    margin-top: 39px;
+    font-size: 33px;
+    
+    text-align: center;
+}
+
+.selectedaddview{
+    width: 32%;
+    height: 67px;
+    float: left;
+    padding-top: 43px;
+    padding-bottom: 30px;
+}
+.selectedbtnadd{
+    width: 45px;
+    height: 45px;
+    border-radius: 500px;
+    background-color:#fb5554;
+    font-size: 28px;
+    color: #fff;
+    text-align: center;
+    float: left;
+}
+
+.melfoodpopview{
+    background-color: #fff;
+    border-radius: 10px;
+    height: 50%;
+    width: 100%;
+    margin-top: -370px;
+    padding-bottom: 30px;
+    margin: 0 auto;
+    min-height: 500px;
+}
+
+// //叉号按钮
+// .at-curtain__btn-close{
+//      width: 56px;
+//      height: 56px;
+     
+// }
+// .at-curtain__btn-close::before{
+//     width: 26px;
+// }
+// .at-curtain__btn-close::after{
+//     width: 26px;
+// }
+// .at-curtain__btn-close--bottom{
+//     margin-left: -20px;
+// }
+
+.mealfoodsuccessimageview{
+    position: relative;
+    top:0px;
+    margin: 10px auto;
+    padding: 0px 10px;
+   
+}
+.successimage{
+    width: 100%;
+    height: 10%;
+   
+}
+
+
+.mealfoodsuccesbtnview{
+    position: relative;
+    top: 1px;
+    margin: 0 auto;
+}
+.foodsuccesbtn{
+     width: 75%;
+     background-color: #fb5554;
+     //height: 80px;
+    //  padding-bottom:10px;
+    //  padding-top: 10px;
+     border: 0px;
+     font-size: 35px;
+     color: #fff
+}
+// .at-curtain__btn-close--bottom{
+//    bottom: 10px;
+// }
+
+// .melfoodpopmodel-onerow{
+//    background-image: url(../../asset/image/showmodelimage.png);
+//    width: 100%;
+//    height: 336px;
+// }
+// .melfoodpopmodel-tworow{
+
+// }
+
+// .topnav{
+//     width: 100%;
+//     position: fixed;
+//     top:0;
+//     left: 0;
+//     z-index: 800;
+// }
+// .content{
+//     width: 100%;
+//     height: 200px;
+//     background-color: #fb5554
+// }
+
+// .topnav1{
+//     width: 100%;
+//     position: fixed;
+//     top:200;
+//     left: 0;
+//     z-index: 800;
+// }
+// .content1{
+//     width: 100%;
+//     height: 200px;
+//     background-color: #666666
+// }
+
+
+// .content-view{
+//     width: 100%;
+//     margin: 0 auto;
+//     padding: 0px;
+// }
+
+// .bottomnav{
+//     width: 100%;
+//     position: fixed;
+//     bottom:100;
+//     right: 0;
+
+// }
+// .bottomcontent{
+//     width: 100%;
+//     height: 100px;
+//     background-color: #fb5554
+// }
+
+// .bottomnav1{
+//     width: 100%;
+//     position: fixed;
+//     bottom:0;
+//     left: 0;
+//     z-index: 800;
+// }
+// .bottomcontent1{
+//     width: 100%;
+//     height: 100px;
+//     background-color: #666666
+// }
+

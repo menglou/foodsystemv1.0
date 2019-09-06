@@ -7,10 +7,11 @@ import wancan from "../../asset/image/wancan.png"
 
 
 import TopNav from "../../components/topnav/topnav"
-
+import { AtIcon } from 'taro-ui'
 import {connect} from '@tarojs/redux'
 
-import './minemenu.scss'
+import styles from './minemenu.module.scss'
+
 
 
 
@@ -26,7 +27,6 @@ export default class MineMenu extends Component{
 
     constructor(props){
         super(props)
-       
     }
 
     componentWillMount () { 
@@ -35,6 +35,7 @@ export default class MineMenu extends Component{
           }
           else{
                 //去加载菜单列表
+               // Taro.redirectTo({url:'./minemenu'})
           }
       }
     
@@ -58,261 +59,203 @@ export default class MineMenu extends Component{
 
     render(){
         return(
-            <View className="containerview-minemenu">
+            <View className={styles.containerviewminemenu}>
                 <TopNav title="我的菜单" isdisplaydaydate={false}  isdisplaynagator={false}></TopNav>
 
-                <View className="listmenuconent">
-                    <View className="menulist">
-                        <View className="menuconent">
-                                <View className="menuconent-onerow">
-                                     <View className="datetime">
-                                            8月8号  星期四
-                                     </View>
-                                     <View className="orderstatus">
-                                           <View className="orderstatus-ico at-icon at-icon-check-circle">
-                                                   
-                                           </View>
-                                           <View className="orderstatus-text">
-                                                 已核销
-                                           </View>
-                                     </View>
-                                </View>
-                                <View className="menuconent-tworow">
-                                    <View className="wheremeal">
-                                         <View className="meal-icon">
-                                            <Image src={zaocan} className="icon-image"></Image>
-                                            
-                                         </View>
-                                         <View className="wheremeal-name">
-                                              早餐
-                                         </View>
-                                    </View>
-                                    <View className="totalmoney">
-                                         ￥10
-                                    </View>
-                                </View>
-                        </View>
-                        <View className="menuconent">
-                                <View className="menuconent-onerow">
-                                     <View className="datetime">
-                                            8月8号  星期四
-                                     </View>
-                                     <View className="orderstatus">
-                                           <View className="orderstatus-ico at-icon at-icon-check-circle">
-                                                   
-                                           </View>
-                                           <View className="orderstatus-text">
-                                                 已核销
-                                           </View>
-                                     </View>
-                                </View>
-                                <View className="menuconent-tworow">
-                                    <View className="wheremeal">
-                                         <View className="meal-icon">
-                                            <Image src={zaocan} className="icon-image"></Image>
-                                         </View>
-                                         <View className="wheremeal-name">
-                                               早餐
-                                         </View>
-                                    </View>
-                                    <View className="totalmoney">
-                                         ￥10
-                                    </View>
-                                </View>
-                        </View>
-                        <View className="menuconent">
-                                <View className="menuconent-onerow">
-                                     <View className="datetime">
-                                            8月8号  星期四
-                                     </View>
-                                     <View className="orderstatus">
-                                           <View className="orderstatus-ico at-icon at-icon-check-circle">
-                                                   
-                                           </View>
-                                           <View className="orderstatus-text">
-                                                 已核销
-                                           </View>
-                                     </View>
-                                </View>
-                                <View className="menuconent-tworow">
-                                    <View className="wheremeal">
-                                         <View className="meal-icon">
-                                            <Image src={zaocan} className="icon-image"></Image>
-                                         </View>
-                                         <View className="wheremeal-name">
-                                               早餐
-                                         </View>
-                                    </View>
-                                    <View className="totalmoney">
-                                         ￥10
-                                    </View>
-                                </View>
-                        </View>
-                        <View className="menuconent">
-                                <View className="menuconent-onerow">
-                                     <View className="datetime">
-                                            8月8号  星期四
-                                     </View>
-                                     <View className="orderstatus">
-                                           <View className="orderstatus-ico at-icon at-icon-check-circle">
-                                                   
-                                           </View>
-                                           <View className="orderstatus-text">
-                                                 已核销
-                                           </View>
-                                     </View>
-                                </View>
-                                <View className="menuconent-tworow">
-                                    <View className="wheremeal">
-                                         <View className="meal-icon">
-                                            <Image src={zaocan} className="icon-image"></Image>
-                                         </View>
-                                         <View className="wheremeal-name">
-                                               早餐
-                                         </View>
-                                    </View>
-                                    <View className="totalmoney">
-                                         ￥10
-                                    </View>
-                                </View>
-                        </View>
-                        <View className="menuconent">
-                                <View className="menuconent-onerow">
-                                     <View className="datetime">
-                                            8月8号  星期四
-                                     </View>
-                                     <View className="orderstatus">
-                                           <View className="orderstatus-ico at-icon at-icon-check-circle">
-                                                   
-                                           </View>
-                                           <View className="orderstatus-text">
-                                                 已核销
-                                           </View>
-                                     </View>
-                                </View>
-                                <View className="menuconent-tworow">
-                                    <View className="wheremeal">
-                                         <View className="meal-icon">
-                                            <Image src={zaocan} className="icon-image"></Image>
-                                         </View>
-                                         <View className="wheremeal-name">
-                                               早餐
-                                         </View>
-                                    </View>
-                                    <View className="totalmoney">
-                                         ￥10
-                                    </View>
-                                </View>
-                        </View>
-                        
-                        <View className="menuconent">
-                                <View className="menuconent-onerow">
-                                     <View className="datetime">
-                                            8月8号  星期四
-                                     </View>
-                                     <View className="orderstatus">
-                                           <View className="orderstatus-ico at-icon at-icon-clock" style="color:#ffbe30">
-                                                   
-                                           </View>
-                                           <View className="orderstatus-text">
-                                                 已预定
-                                           </View>
-                                     </View>
-                                </View>
-                                <View className="menuconent-tworow">
-                                    <View className="wheremeal">
-                                         <View className="meal-icon">
-                                            <Image src={zaocan} className="icon-image"></Image>
-                                         </View>
-                                         <View className="wheremeal-name">
-                                               早餐
-                                         </View>
-                                    </View>
-                                    <View className="totalmoney">
-                                         ￥8
-                                    </View>
-                                </View>
-                        </View>
-                        <View className="menuconent">
-                                <View className="menuconent-onerow">
-                                     <View className="datetime">
-                                            8月9号  星期五
-                                     </View>
-                                     <View className="orderstatus">
-                                           <View className="orderstatus-ico at-icon at-icon-clock" style="color:#ffbe30">
-                                                   
-                                           </View>
-                                           <View className="orderstatus-text">
-                                                 已预定
-                                           </View>
-                                     </View>
-                                </View>
-                                <View className="menuconent-tworow">
-                                    <View className="wheremeal">
-                                         <View className="meal-icon">
-                                            <Image src={wucan} className="icon-image"></Image>
-                                         </View>
-                                         <View className="wheremeal-name">
-                                               午餐
-                                         </View>
-                                    </View>
-                                    <View className="totalmoney">
-                                         ￥18
-                                    </View>
-                                </View>
-                        </View>
-                        <View className="menuconent">
-                                <View className="menuconent-onerow">
-                                     <View className="datetime">
-                                            8月10号  星期六
-                                     </View>
-                                     <View className="orderstatus">
-                                           <View className="orderstatus-ico at-icon at-icon-clock" style="color:#ffbe30">
-                                                   
-                                           </View>
-                                           <View className="orderstatus-text">
-                                                 已预定
-                                           </View>
-                                     </View>
-                                </View>
-                                <View className="menuconent-tworow">
-                                    <View className="wheremeal">
-                                         <View className="meal-icon">
-                                            <Image src={zaocan} className="icon-image"></Image>
-                                         </View>
-                                         <View className="wheremeal-name">
-                                               早餐
-                                         </View>
-                                    </View>
-                                    <View className="totalmoney">
-                                         ￥8
-                                    </View>
-                                </View>
-                        </View>
-                        <View className="menuconent" onClick={this.onSeeMeilDetail}>
-                                <View className="menuconent-onerow">
-                                     <View className="datetime">
+                <View className={styles.listmenuconent}>
+                    <View className={styles.menulist}>
+                        <View className={styles.menuconent} >
+                                <View className={styles.menuconentonerow}>
+                                     <View className={styles.datetime}>
                                             8月11号  星期天
                                      </View>
-                                     <View className="orderstatus">
-                                           <View className="orderstatus-ico at-icon at-icon-clock" style="color:#ffbe30">
-                                                   
+                                     <View className={styles.orderstatus}>
+                                           <View className={styles.orderstatusico} style="color:#11ce68">
+                                                <AtIcon className={styles.aticos} value="check-circle" size="18" ></AtIcon>
                                            </View>
-                                           <View className="orderstatus-text">
+                                           <View className={styles.orderstatustext}>
                                                  已预定
                                            </View>
                                      </View>
                                 </View>
-                                <View className="menuconent-tworow">
-                                    <View className="wheremeal">
-                                         <View className="meal-icon" >
-                                            <Image src={wancan} className="icon-image"></Image>
+                                <View className={styles.menuconenttworow}>
+                                    <View className={styles.wheremeal}>
+                                         <View className={styles.mealicon} >
+                                            <Image src={wancan} className={styles.iconimage}></Image>
                                          </View>
-                                         <View className="wheremeal-name">
+                                         <View className={styles.wheremealname}>
                                                晚餐
                                          </View>
                                     </View>
-                                    <View className="totalmoney">
+                                    <View className={styles.totalmoney}>
+                                         ￥15
+                                    </View>
+                                </View>
+                        </View>
+                        <View className={styles.menuconent}>
+                                <View className={styles.menuconentonerow}>
+                                     <View className={styles.datetime}>
+                                            8月11号  星期天
+                                     </View>
+                                     <View className={styles.orderstatus}>
+                                           <View className={styles.orderstatusico} style="color:#11ce68">
+                                                <AtIcon className={styles.aticos} value="check-circle" size="18" ></AtIcon>
+                                           </View>
+                                           <View className={styles.orderstatustext}>
+                                                 已预定
+                                           </View>
+                                     </View>
+                                </View>
+                                <View className={styles.menuconenttworow}>
+                                    <View className={styles.wheremeal}>
+                                         <View className={styles.mealicon} >
+                                            <Image src={wancan} className={styles.iconimage}></Image>
+                                         </View>
+                                         <View className={styles.wheremealname}>
+                                               晚餐
+                                         </View>
+                                    </View>
+                                    <View className={styles.totalmoney}>
+                                         ￥15
+                                    </View>
+                                </View>
+                        </View>
+                        <View className={styles.menuconent} >
+                                <View className={styles.menuconentonerow}>
+                                     <View className={styles.datetime}>
+                                            8月11号  星期天
+                                     </View>
+                                     <View className={styles.orderstatus}>
+                                           <View className={styles.orderstatusico} style="color:#11ce68">
+                                                <AtIcon className={styles.aticos} value="check-circle" size="18" ></AtIcon>
+                                           </View>
+                                           <View className={styles.orderstatustext}>
+                                                 已预定
+                                           </View>
+                                     </View>
+                                </View>
+                                <View className={styles.menuconenttworow}>
+                                    <View className={styles.wheremeal}>
+                                         <View className={styles.mealicon} >
+                                            <Image src={wancan} className={styles.iconimage}></Image>
+                                         </View>
+                                         <View className={styles.wheremealname}>
+                                               晚餐
+                                         </View>
+                                    </View>
+                                    <View className={styles.totalmoney}>
+                                         ￥15
+                                    </View>
+                                </View>
+                        </View>
+                        <View className={styles.menuconent} >
+                                <View className={styles.menuconentonerow}>
+                                     <View className={styles.datetime}>
+                                            8月11号  星期天
+                                     </View>
+                                     <View className={styles.orderstatus}>
+                                           <View className={styles.orderstatusico} style="color:#ffbe30">
+                                                <AtIcon className={styles.aticos} value="clock" size="18" ></AtIcon>
+                                           </View>
+                                           <View className={styles.orderstatustext}>
+                                                 已预定
+                                           </View>
+                                     </View>
+                                </View>
+                                <View className={styles.menuconenttworow}>
+                                    <View className={styles.wheremeal}>
+                                         <View className={styles.mealicon} >
+                                            <Image src={wancan} className={styles.iconimage}></Image>
+                                         </View>
+                                         <View className={styles.wheremealname}>
+                                               晚餐
+                                         </View>
+                                    </View>
+                                    <View className={styles.totalmoney}>
+                                         ￥15
+                                    </View>
+                                </View>
+                        </View>
+                        <View className={styles.menuconent} >
+                                <View className={styles.menuconentonerow}>
+                                     <View className={styles.datetime}>
+                                            8月11号  星期天
+                                     </View>
+                                     <View className={styles.orderstatus}>
+                                           <View className={styles.orderstatusico} style="color:#ffbe30">
+                                                <AtIcon className={styles.aticos} value="clock" size="18" ></AtIcon>
+                                           </View>
+                                           <View className={styles.orderstatustext}>
+                                                 已预定
+                                           </View>
+                                     </View>
+                                </View>
+                                <View className={styles.menuconenttworow}>
+                                    <View className={styles.wheremeal}>
+                                         <View className={styles.mealicon} >
+                                            <Image src={wancan} className={styles.iconimage}></Image>
+                                         </View>
+                                         <View className={styles.wheremealname}>
+                                               晚餐
+                                         </View>
+                                    </View>
+                                    <View className={styles.totalmoney}>
+                                         ￥15
+                                    </View>
+                                </View>
+                        </View>
+                        <View className={styles.menuconent} >
+                                <View className={styles.menuconentonerow}>
+                                     <View className={styles.datetime}>
+                                            8月11号  星期天
+                                     </View>
+                                     <View className={styles.orderstatus}>
+                                           <View className={styles.orderstatusico} style="color:#ffbe30">
+                                                <AtIcon className={styles.aticos} value="clock" size="18" ></AtIcon>
+                                           </View>
+                                           <View className={styles.orderstatustext}>
+                                                 已预定
+                                           </View>
+                                     </View>
+                                </View>
+                                <View className={styles.menuconenttworow}>
+                                    <View className={styles.wheremeal}>
+                                         <View className={styles.mealicon} >
+                                            <Image src={wancan} className={styles.iconimage}></Image>
+                                         </View>
+                                         <View className={styles.wheremealname}>
+                                               晚餐
+                                         </View>
+                                    </View>
+                                    <View className={styles.totalmoney}>
+                                         ￥15
+                                    </View>
+                                </View>
+                        </View>
+                        <View className={styles.menuconent}  onClick={this.onSeeMeilDetail}>
+                                <View className={styles.menuconentonerow}>
+                                     <View className={styles.datetime}>
+                                            8月11号  星期天
+                                     </View>
+                                     <View className={styles.orderstatus}>
+                                           <View className={styles.orderstatusico} style="color:#ffbe30">
+                                                <AtIcon className={styles.aticos} value="clock" size="18" ></AtIcon>
+                                           </View>
+                                           <View className={styles.orderstatustext}>
+                                                 已预定
+                                           </View>
+                                     </View>
+                                </View>
+                                <View className={styles.menuconenttworow}>
+                                    <View className={styles.wheremeal}>
+                                         <View className={styles.mealicon} >
+                                            <Image src={wancan} className={styles.iconimage}></Image>
+                                         </View>
+                                         <View className={styles.wheremealname}>
+                                               晚餐
+                                         </View>
+                                    </View>
+                                    <View className={styles.totalmoney}>
                                          ￥15
                                     </View>
                                 </View>

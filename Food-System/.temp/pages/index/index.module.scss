@@ -1,0 +1,130 @@
+
+.containerviewfirst{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+}
+
+.listcontent{
+    overflow-y: scroll;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 160px;
+    padding-top: 20px;
+    -webkit-overflow-scrolling:touch;
+    
+}
+.functionmenu{
+    width: 96%;
+    margin: 2% auto;
+    padding: 0px;
+    height: 100%;
+    margin-bottom: 150px;
+}
+.firstrow{
+    width: 100%;
+    height: 260px;
+  
+    //background-image: url(../../asset/image/startoderdood.png)
+}
+
+.firstrowimage{
+    width: 100%;
+    height: 260px;
+    border-radius: 10px;
+    border: 0px;
+}
+.nextrow{
+    width: 100%;
+    margin: 0 auto;
+}
+.nextrowone{
+    width: 100%;
+    margin-top: 30px;
+    float: left;
+}
+.nextrowoneimae1{
+    width: 48%;
+    height: 260px;
+    //background-image: url(../../asset/image/mymenu.png);
+    margin-right: 2%;
+    float: left;
+    padding: 0px;
+}
+.mymenu{
+    width: 100%;
+    height: 260px;
+    border-radius: 10px;
+    border: 0px;
+}
+
+
+.nextrowoneimae2{
+    width: 48%;
+    height: 260px;
+    
+    //@errorbackground-image: url(../../asset/image/rules.png);
+    margin-left: 2%;
+    float: left;
+    padding: 0px;
+}
+.rules{
+    width: 100%;
+    height: 260px;
+    border-radius: 10px;
+    border: 0px;
+}
+
+// .taro-img{
+//     width:  350px;
+//     height: 260px;
+//     border-radius: 0.21333rem;
+//     border: 0;
+// }
+
+.nextrowtwo{
+    width: 100%;
+    margin-top: 30px;
+    float: left;
+}
+
+.nextrowtwoimae1{
+    width: 48%;
+    height: 260px;
+  
+    //background-image: url(../../asset/image/gonggao.png);
+    margin-right: 2%;
+    float: left;
+    padding: 0px;
+}
+.gonggao{
+    width: 100%;
+    height: 260px;
+    border-radius: 10px;
+    border: 0px;
+}
+.nextrowtwoimae2{
+    width: 48%;
+    height: 260px;
+    
+    //background-image: url(../../asset/image/mine.png);
+    margin-left: 2%;
+    float: left;
+    padding: 0px;
+}
+.mine{
+    width: 100%;
+    height: 260px;
+    border-radius: 10px;
+    border: 0px;
+}
+

@@ -1,1 +1,8 @@
-@import   'taro-ui/dist/style/index.scss'
+@import   'taro-ui/dist/style/index.scss';
+
+body {
+
+    -webkit-overflow-scrolling: touch;
+
+
+   }

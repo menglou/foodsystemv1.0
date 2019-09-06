@@ -3,7 +3,7 @@ import { View, Text,Button,Picker,Input,Image} from '@tarojs/components'
 
 
 import TopNav from "../../components/topnav/topnav"
-import   './orderdetail.scss'
+import  styles from './orderdetail.module.scss'
 
 
 import shujiao from "../../asset/food/6.jpg"
@@ -36,142 +36,143 @@ export default class OrderDetail extends Component{
      
      render(){
         return (
-            <View className="containerview-detail">
+            <View className={styles.containerviewdetail}>
                 <TopNav title="订单详情" isdisplaydaydate={true}  ishavedate={false} isdisplaynagator={true} date="8月8号  星期五" mealtype="早餐" orderstatus="已预定" ></TopNav>
-                <View className="meal-deatil">
-                    <View className="meal-deatil-content">
-                         <View className="meal-info">
-                               <View className="meal-info-left">
-                                   <View className="meal-image-view">
-                                        <Image className="meal-image" src={shujiao}></Image>
+                <View className={styles.mealdeatil}>
+                    <View className={styles.mealdeatilcontent}>
+                         <View className={styles.mealinfo}>
+                               <View className={styles.mealinfoleft}>
+                                   <View className={styles.mealimageview}>
+                                        <Image className={styles.mealimage} src={shujiao}></Image>
                                    </View>
-                                   <View className="meal-name-view">
+                                   <View className={styles.mealnameview}>
                                            水饺
                                    </View>
-                                   <View className="meal-count-view">
+                                   <View className={styles.mealcountview}>
                                            x 1
                                    </View>
                                </View>
-                               <View className="meal-info-right">
+                               <View className={styles.mealinforight}>
                                            ￥30
                                </View>
                          </View>
-                         <View className="meal-info">
-                               <View className="meal-info-left">
-                                   <View className="meal-image-view">
-                                        <Image className="meal-image" src={shujiao}></Image>
+                         <View className={styles.mealinfo}>
+                               <View className={styles.mealinfoleft}>
+                                   <View className={styles.mealimageview}>
+                                        <Image className={styles.mealimage} src={shujiao}></Image>
                                    </View>
-                                   <View className="meal-name-view">
+                                   <View className={styles.mealnameview}>
                                            水饺
                                    </View>
-                                   <View className="meal-count-view">
+                                   <View className={styles.mealcountview}>
                                            x 1
                                    </View>
                                </View>
-                               <View className="meal-info-right">
+                               <View className={styles.mealinforight}>
                                            ￥30
                                </View>
                          </View>
-                         <View className="meal-info">
-                               <View className="meal-info-left">
-                                   <View className="meal-image-view">
-                                        <Image className="meal-image" src={shujiao}></Image>
+                         <View className={styles.mealinfo}>
+                               <View className={styles.mealinfoleft}>
+                                   <View className={styles.mealimageview}>
+                                        <Image className={styles.mealimage} src={shujiao}></Image>
                                    </View>
-                                   <View className="meal-name-view">
+                                   <View className={styles.mealnameview}>
                                            水饺
                                    </View>
-                                   <View className="meal-count-view">
+                                   <View className={styles.mealcountview}>
                                            x 1
                                    </View>
                                </View>
-                               <View className="meal-info-right">
+                               <View className={styles.mealinforight}>
                                            ￥30
                                </View>
                          </View>
-                         <View className="meal-info">
-                               <View className="meal-info-left">
-                                   <View className="meal-image-view">
-                                        <Image className="meal-image" src={shujiao}></Image>
+                         <View className={styles.mealinfo}>
+                               <View className={styles.mealinfoleft}>
+                                   <View className={styles.mealimageview}>
+                                        <Image className={styles.mealimage} src={shujiao}></Image>
                                    </View>
-                                   <View className="meal-name-view">
+                                   <View className={styles.mealnameview}>
                                            水饺
                                    </View>
-                                   <View className="meal-count-view">
+                                   <View className={styles.mealcountview}>
                                            x 1
                                    </View>
                                </View>
-                               <View className="meal-info-right">
+                               <View className={styles.mealinforight}>
                                            ￥30
                                </View>
                          </View>
-                         <View className="meal-info">
-                               <View className="meal-info-left">
-                                   <View className="meal-image-view">
-                                        <Image className="meal-image" src={shujiao}></Image>
+                         <View className={styles.mealinfo}>
+                               <View className={styles.mealinfoleft}>
+                                   <View className={styles.mealimageview}>
+                                        <Image className={styles.mealimage} src={shujiao}></Image>
                                    </View>
-                                   <View className="meal-name-view">
+                                   <View className={styles.mealnameview}>
                                            水饺
                                    </View>
-                                   <View className="meal-count-view">
+                                   <View className={styles.mealcountview}>
                                            x 1
                                    </View>
                                </View>
-                               <View className="meal-info-right">
+                               <View className={styles.mealinforight}>
                                            ￥30
                                </View>
                          </View>
-                         <View className="meal-info">
-                               <View className="meal-info-left">
-                                   <View className="meal-image-view">
-                                        <Image className="meal-image" src={shujiao}></Image>
+                         <View className={styles.mealinfo}>
+                               <View className={styles.mealinfoleft}>
+                                   <View className={styles.mealimageview}>
+                                        <Image className={styles.mealimage} src={shujiao}></Image>
                                    </View>
-                                   <View className="meal-name-view">
+                                   <View className={styles.mealnameview}>
                                            水饺
                                    </View>
-                                   <View className="meal-count-view">
+                                   <View className={styles.mealcountview}>
                                            x 1
                                    </View>
                                </View>
-                               <View className="meal-info-right">
+                               <View className={styles.mealinforight}>
                                            ￥30
                                </View>
                          </View>
-                         <View className="meal-info">
-                               <View className="meal-info-left">
-                                   <View className="meal-image-view">
-                                        <Image className="meal-image" src={shujiao}></Image>
+                         <View className={styles.mealinfo}>
+                               <View className={styles.mealinfoleft}>
+                                   <View className={styles.mealimageview}>
+                                        <Image className={styles.mealimage} src={shujiao}></Image>
                                    </View>
-                                   <View className="meal-name-view">
+                                   <View className={styles.mealnameview}>
                                            水饺
                                    </View>
-                                   <View className="meal-count-view">
+                                   <View className={styles.mealcountview}>
                                            x 1
                                    </View>
                                </View>
-                               <View className="meal-info-right">
+                               <View className={styles.mealinforight}>
                                            ￥30
                                </View>
                          </View>
+                        
                          
 
-                         <View className="order-total-money-view">
-                               <View className="order-total-money-text">
+                         <View className={styles.ordertotalmoneyview}>
+                               <View className={styles.ordertotalmoneytext}>
                                     总价:
                                </View>
-                               <View className="order-total-money-cont">
+                               <View className={styles.ordertotalmoneycont}>
                                     ￥210
                                </View>
                          </View>
                     </View>
                     
                 </View>
-                <View className="order-detail-footer">
-                        <View className="footer-fun">
-                            <View className="undo-order">
-                                <View className="undo-order-btn">撤销订单</View>
+                <View className={styles.orderdetailfooter}>
+                        <View className={styles.footerfun}>
+                            <View className={styles.undoorder}>
+                                <View className={styles.undoorderbtn}>撤销订单</View>
                             </View>
-                            <View className="edit-order">
-                                <View className="edit-order-btn" >重新选择</View>
+                            <View className={styles.editorder}>
+                                <View className={styles.editorderbtn}>重新选择</View>
                             </View>
                         </View>
                 </View>

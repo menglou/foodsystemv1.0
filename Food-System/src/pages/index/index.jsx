@@ -6,7 +6,7 @@ import mymenu from '../../asset/image/mymenu.png'
 import mine from '../../asset/image/mine.png'
 import gonggao from '../../asset/image/gonggao.png'
 import TopNav from "../../components/topnav/topnav"
-import './index.scss'
+import styles from './index.module.scss'
 
 
 const tabList = [{ title: '早餐' }, { title: '中餐' }, { title: '晚餐' }]
@@ -67,29 +67,29 @@ export default class Index extends Component {
 
   render () {
     return (
-      <View className='containerview-first' >
+      <View className={styles.containerviewfirst} >
 
           <TopNav title="首页" isdisplaydaydate={false}  isdisplaynagator={false} ishavedate={false}></TopNav>
-          <View className="listcontent"> 
-               <View className="functionmenu">
-                   <View className="firstrow" onClick={this.onNavigatoOrderfood}>
-                         <Image className="firstrow-image" src={startoderdood}></Image>
+          <View className={styles.listcontent}> 
+               <View className={styles.functionmenu}>
+                   <View className={styles.firstrow} onClick={this.onNavigatoOrderfood}>
+                         <Image className={styles.firstrowimage} src={startoderdood}></Image>
                    </View>
-                   <View className="nextrow">
-                        <View className="nextrow-one">
-                             <View className="nextrow-one-imae1" onClick={this.onredirectomymenu}>
-                                <Image className="mymenu" src={mymenu}></Image>
+                   <View className={styles.nextrow}>
+                        <View className={styles.nextrowone}>
+                             <View className={styles.nextrowoneimae1} onClick={this.onredirectomymenu}>
+                                <Image className={styles.mymenu} src={mymenu} mode="scaleToFill"></Image>
                              </View>
-                             <View className="nextrow-one-imae2" onClick={this.onRedircto}>
-                                <Image className="rules" src={rules}></Image>
+                             <View className={styles.nextrowoneimae2} onClick={this.onRedircto}>
+                                <Image className={styles.rules} src={rules} mode="scaleToFill"></Image>
                              </View>
                         </View>
-                        <View className="nextrow-two" >
-                             <View className="nextrow-two-imae1" onClick={this.onredirecttonotice}>
-                                <Image className="gonggao" src={gonggao}></Image>
+                        <View className={styles.nextrowtwo} >
+                             <View className={styles.nextrowtwoimae1} onClick={this.onredirecttonotice}>
+                                <Image className={styles.gonggao} src={gonggao} mode="scaleToFill"></Image>
                              </View>
-                             <View className="nextrow-two-imae2" onClick={this.onredirecttomine}>
-                                <Image className="mine" src={mine}></Image>
+                             <View className={styles.nextrowtwoimae2} onClick={this.onredirecttomine}>
+                                <Image className={styles.mine} src={mine} mode="scaleToFill"></Image>
                              </View>
                         </View>
                    </View>

@@ -1,9 +1,9 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text,Button,Picker,Input,Image} from '@tarojs/components'
-
+import $ from 'jquery'
 import icon from '../../asset/image/index.jpg'
 import orderfoodsuccess from '../../asset/image/mealmodel.png'
-import {AtTabs, AtTabsPane,AtIcon,AtBadge,AtFloatLayout,AtCurtain,AtButton } from "taro-ui"
+import {AtTabs, AtTabsPane,AtIcon,AtBadge,AtFloatLayout,AtCurtain,AtButton,AtAvatar  } from "taro-ui"
 import foodlist from "../../components/foodlist/foodlist"
 import getNextPreDate from "../../util/getdate"
 import Format from '../../util/formatdate'
@@ -13,6 +13,7 @@ import {connect} from '@tarojs/redux'
   
 import  {addchangeselectedmeal,minuschangeselectedmeal,selectedaddchangeselectedmeal,selectedminuschangeselectedmeal,clearchangeselectedmeal,displayselectdfoodview} from '../../action/managerselectedfood'
 import {modifypwd,loginexits} from '../../action/manageruserinfo'
+import styles from './orderfood.module.scss'
 import './orderfood.scss'
 
 
@@ -64,7 +65,8 @@ export default class OrderFood extends Component {
     
    }
 
-  componentDidMount () { }
+  componentDidMount () { 
+  }
 
   componentWillUnmount () {}
 
@@ -174,11 +176,15 @@ export default class OrderFood extends Component {
 
   //报餐
   onMealFood=()=>{
+
     this.setState({
       isdisplaymeelfoodsuccess:true
+    },()=>{
+     
     })
     //在报餐成功的情况下清空之前reducer中存的
-    this.props.clearchangeselectedmeal()
+    this.props.clearchangeselectedmeal();
+   
   }
 
   //关闭订单成功的悬浮窗
@@ -199,43 +205,48 @@ export default class OrderFood extends Component {
     })
   }
 
+  //禁止软键盘弹出
+  onInputFoucs=()=>{
+    document.activeElement.blur();
+  }
+
   render () {
     return (
-      <View className='containerview' >
+      <View className={styles.containerview} >
 
-             <View className="topnav">
-                <View className="content">
-                  <View className="nagator">
-                      <View className="daohanwrrow">
+             <View className={styles.topnav}>
+                <View className={styles.content}>
+                  <View className={styles.nagator}>
+                      <View className={styles.daohanwrrow}>
                            
                       </View>
-                      <View className="nagatortitle">
+                      <View className={styles.nagatortitle}>
                            报餐
                       </View>
                   </View>
-                  <View className="daychange-view">
-                      <View className="daychange-view-content">
-                          <View className="prevday-view" >
-                            <View className="pre-btn" onClick={this.onPrevDay.bind(this,this.state.nochangedate)}>前一天</View>
+                  <View className={styles.daychangeview}>
+                      <View className={styles.daychangeviewcontent}>
+                          <View className={styles.prevdayview} >
+                            <View className={styles.prebtn} onClick={this.onPrevDay.bind(this,this.state.nochangedate)}>前一天</View>
                           </View>
                                   
-                          <View className="dayviews">
+                          <View className={styles.dayviews}>
                               <Picker mode="date" onChange={this.onDateChange}  >
-                                      <View className='picker'>
-                                        <View className='calendariconview' >
-                                          <AtIcon value="calendar" size="20" color="#fff"></AtIcon>
+                                      <View className={styles.picker}>
+                                        <View className={styles.calendariconview} >
+                                          <AtIcon value={styles.calendar} size="20" color="#fff"></AtIcon>
                                         </View>
-                                        <View className="datedisplayview">
-                                             <Input value={this.state.data} type="text"></Input>
+                                        <View className={styles.datedisplayview}>
+                                             <Input value={this.state.data} type="text" onFocus={this.onInputFoucs} className={styles.inputdate}></Input>
                                         </View>
-                                        <View className='chevrondowniconview'>
+                                        <View className={styles.chevrondowniconview}>
                                           <AtIcon value="chevron-down" size="20" color="#fff"></AtIcon>
                                         </View>
                                       </View>
                                 </Picker>         
                           </View>
-                          <View className="nextday-view">
-                            <View className="next-btn"  onClick={this.onNextDay.bind(this,this.state.nochangedate)}>后一天</View>
+                          <View className={styles.nextdayview}>
+                            <View className={styles.nextbtn}  onClick={this.onNextDay.bind(this,this.state.nochangedate)}>后一天</View>
                       </View>
                     </View>
                  </View>
@@ -246,37 +257,37 @@ export default class OrderFood extends Component {
          
            
 
-             <View className="tabview">
+         <View className={styles.tabview}>
             <AtTabs current={this.state.current} tabList={tabList} onClick={this.changeTab.bind(this)}   >
                   <AtTabsPane current={this.state.current} index={0} >
                       {
                         this.props.managerselectedfood.listfood.map((food,i)=>
                         <View>
-                              <View className="fooddisplayview"  >
-                                <View className="image-view">
-                                     <Image src={food.image}  className="food-img" ></Image> 
+                              <View className={styles.fooddisplayview}  >
+                                <View className={styles.imageview}>
+                                     <Image src={food.image}  className={styles.foodimg}  ></Image> 
                                 </View>
-                                <View className="food-description">
-                                    <View className="food-name" key={food.id} data-index={i}>
+                                <View className={styles.fooddescription}>
+                                    <View className={styles.foodname} key={food.id} data-index={i}>
                                     {food.name}
                                     </View>
-                                    <View className="food-price" key={food.id} data-index={i}>
+                                    <View className={styles.foodprice} key={food.id} data-index={i}>
                                     {food.price}
                                     </View>
                                 </View>
-                                <View className="btnview">
-                                    <View className="jianview">
-                                        <View className={food.Isdisplay==true?"btnjian":"btnjianhidden"}  key={food.id} data-index={i} onClick={this.props.minuschangeselectedmeal.bind(this,i)}>-</View>
+                                <View className={styles.btnview}>
+                                    <View className={styles.jianview}>
+                                        <View className={food.Isdisplay==true?styles.btnjian:styles.btnjianhidden}  key={food.id} data-index={i} onClick={this.props.minuschangeselectedmeal.bind(this,i)}>-</View>
                                     </View>
-                                    <View className={food.Isdisplay==true?"countview":"countviewhidden"}>
+                                    <View className={food.Isdisplay==true?styles.countview:styles.countviewhidden}>
                                       <Text key={food.id} data-index={i} >{food.count}</Text>
                                     </View>
-                                    <View className="addview">
-                                        <View className="btnadd" key={food.id} data-index={i} onClick={this.onAdd.bind(this,i)}>+</View>
+                                    <View className={styles.addview}>
+                                        <View className={styles.btnadd} key={food.id} data-index={i} onClick={this.onAdd.bind(this,i)}>+</View>
                                     </View>
                               </View>
                               </View>
-                              <View className="line"/>
+                              <View className={styles.line}/>
                         </View>
                         )}
                   </AtTabsPane>
@@ -290,66 +301,66 @@ export default class OrderFood extends Component {
           </View>
 
            
-             <View className={this.props.managerselectedfood.isdiaplaymealfood==true?"mealfood-view-bottonnavr":"mealfood-view-bottonnavr-hidden"}>
+             <View className={this.props.managerselectedfood.isdiaplaymealfood==true?styles.mealfoodviewbottonnavr:styles.mealfoodviewbottonnavrhidden}>
              
-                 <View className="mealfood-content">
-                   <View className="leftcontent-view" onClick={this.props.displayselectdfoodview.bind(this,'display')}>
-                         <View className="bage-icon">
+                 <View className={styles.mealfoodcontent}>
+                   <View className={styles.leftcontentview} onClick={this.props.displayselectdfoodview.bind(this,'display')}>
+                         <View className={styles.bageicon}>
                          <AtBadge value={this.props.managerselectedfood.foodcount} maxValue={99}>
-                            <Image src={icon} className="icon-image" onClick={this.props.displayselectdfoodview.bind(this,'display')}></Image>
+                            <Image src={icon}  className={styles.iconimage} onClick={this.props.displayselectdfoodview.bind(this,'display')}></Image>
                           </AtBadge>
                          </View>
-                         <View className="totalmoney-view">
+                         <View className={styles.totalmoneyview}>
                                  <Text>￥{this.props.managerselectedfood.totalmoney}</Text>
                          </View>
                    </View>
                      
-                   <View className="submitbuyfood-view" onClick={this.onMealFood}>
+                   <View className={styles.submitbuyfoodview} onClick={this.onMealFood}>
                         报餐
                   </View>
                  </View>
            </View>
         
          
-             <View className={this.props.managerselectedfood.floatisOpened==true?"xuanfu":"xuanfu-hidden"}>
+             <View className={this.props.managerselectedfood.floatisOpened==true?styles.xuanfu:styles.xuanfuhidden}>
                     <AtFloatLayout   isOpened={this.props.managerselectedfood.floatisOpened}  onClose={this.props.displayselectdfoodview.bind(this,'close')} scrollY={true}>
-                        <View className="float-view-container">
-                            <View className="onerow-content">
-                                <View className="left-onerow-content">
+                        <View className={styles.floatviewcontainer}>
+                            <View className={styles.onerowcontent}>
+                                <View className={styles.leftonerowcontent}>
                                     已选菜品
                                 </View>
-                                <View className="right-onerow-content">
-                                    <View className="deleiconview">
+                                <View className={styles.rightonerowcontent}>
+                                    <View className={styles.deleiconview}>
                                         <AtIcon value="trash" size="20" color="#9f9f9f"></AtIcon>
                                     </View>
-                                    <View className="celarlist-view" onClick={this.props.clearchangeselectedmeal}>
+                                    <View className={styles.celarlistview} onClick={this.props.clearchangeselectedmeal}>
                                         清空
                                     </View>
                                 </View>
                             </View>
-                            <View className="tworow-content">
+                            <View className={styles.tworowcontent}>
                                     <AtTabsPane current={this.state.current} index={0} >
                                     {
                                         this.props.managerselectedfood.selectedfood.map((food,i)=>
                                         <View>
-                                             <View className="selected-fooddisplayview"  >
-                                                <View className="selected-food-description">
-                                                    <View className="selected-food-name" data-index={i} >
+                                             <View className={styles.selectedfooddisplayview}  >
+                                                <View className={styles.selectedfooddescription}>
+                                                    <View className={styles.selectedfoodname} data-index={i} >
                                                        {food.name}
                                                     </View>
-                                                    <View className="selected-food-price" data-index={i} >
+                                                    <View className={styles.selectedfoodprice} data-index={i} >
                                                       {food.price}
                                                     </View>
                                                 </View>
-                                                <View className="selected-btnview">
-                                                    <View className="selected-jianview">
-                                                        <View className="selected-tnjian" data-index={i}  onClick={this.props.selectedminuschangeselectedmeal.bind(this,i)}>-</View>
+                                                <View className={styles.selectedbtnview}>
+                                                    <View className={styles.selectedjianview}>
+                                                        <View className={styles.selectedtnjian} data-index={i}  onClick={this.props.selectedminuschangeselectedmeal.bind(this,i)}>-</View>
                                                     </View>
-                                                    <View className="selected-countview">
+                                                    <View className={styles.selectedcountview}>
                                                       <Text >{food.count}</Text>
                                                     </View>
-                                                    <View className="selected-addview">
-                                                        <View className="selected-btnadd" data-index={i} onClick={this.props.selectedaddchangeselectedmeal.bind(this,i)}>+</View>
+                                                    <View className={styles.selectedaddview}>
+                                                        <View className={styles.selectedbtnadd} data-index={i} onClick={this.props.selectedaddchangeselectedmeal.bind(this,i)}>+</View>
                                                     </View>
                                                 </View>
                                              </View>
@@ -363,12 +374,12 @@ export default class OrderFood extends Component {
             </View>
              <View className={this.state.isdisplaymeelfoodsuccess==true?"":""}>
                 <AtCurtain isOpened={this.state.isdisplaymeelfoodsuccess} onClose={this.onClose} >
-                  <View className="melfoodpopview">
-                     <View className="mealfoodsuccess-image-view">
-                        <Image className="successimage" src={orderfoodsuccess}></Image>
+                  <View className={styles.melfoodpopview}>
+                     <View className={styles.mealfoodsuccessimageview}>
+                        <Image className={styles.successimage} src={orderfoodsuccess}></Image>
                      </View>
-                     <View className="mealfoodsuccesbtnview">
-                       <Button  className="foodsuccesbtn" onClick={this.onSeeMenu}>查看菜单</Button>
+                     <View className={styles.mealfoodsuccesbtnview}>
+                       <Button  className={styles.foodsuccesbtn} onClick={this.onSeeMenu}>查看菜单</Button>
                      </View>
                   </View>
                 </AtCurtain>

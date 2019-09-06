@@ -1,0 +1,161 @@
+.containerviewdetail{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+     
+}
+
+.mealdeatil{
+    width: 100%;
+    height:100%;
+    overflow-y: scroll;
+    position: absolute;
+    margin-top: 242px;
+    padding-top: 20px;
+    
+}
+.mealdeatilcontent{
+    width: 92%;
+    padding-left: 4%;
+    padding-right: 4%;
+    margin: 0 auto ;
+}
+
+.mealinfo{
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid #e9e9e9;
+    height: 80px;
+    
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.mealinfoleft{
+    width: 70%;
+    float: left;
+    height: 80px;
+}
+
+.mealimageview{
+    width: 70px;
+    height: 70px;
+     float: left;
+     padding-top: 2.5px;
+}
+.mealimage{
+    width: 80px;
+    height: 80px;
+}
+
+.mealnameview{
+    width: 150px;
+    font-size: 36px;
+    float: left;
+    height: 59px;
+    text-align: center;
+    padding-top: 11px
+}
+.mealcountview{
+    width: 100px;
+    float: right;
+    text-align: right;
+    font-size: 36px;
+    height: 59px;
+    padding-top: 11px
+}
+
+.mealinforight{
+    width: 30%;
+    float: left;
+    text-align: right;
+    font-size: 36px;
+    height: 59px;
+    padding-top: 13px
+}
+
+
+
+.ordertotalmoneyview{
+ 
+    height: 100px;
+    float: left;
+    padding-top: 50px;
+    width: 100%;
+    margin-bottom: 12.26667rem;
+}
+
+.ordertotalmoneytext{
+    width:75%;
+    float: left;
+    text-align: right;
+    font-size: 38px;
+    padding-top: 6px;
+  
+}
+.ordertotalmoneycont{
+    width:25%;
+    float: left;
+    text-align: right;
+    font-size: 45px;
+}
+
+
+
+
+.orderdetailfooter{
+    position: absolute;
+    z-index: 500px;
+    bottom:0;
+    left: 0;
+    width: 100%;
+}
+.footerfun{
+    width: 100%;
+    margin:  0 auto;
+    background-color: #fafafa;
+    height: 165px;
+    border-top: 1px solid #e5e5e5 
+}
+.undoorder{
+    width: 50%;
+    float: left;
+    border-right: 1px solid #e5e5e5;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 165px;
+    text-align: center;
+    .undoorderbtn{
+        width: 100%;
+        border: 0px;
+        height: 120px;
+        font-size: 42px;
+        padding-top: 45px
+    }
+}
+
+.editorder{
+    width: 50%;
+    float: left;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 165px;
+    text-align: center;
+    color: #fb6c6b;
+    .editorderbtn{
+        width: 100%;
+        border: 0px;
+        font-size: 42px;
+        height: 120px;
+        padding-top: 45px
+    }
+
+}

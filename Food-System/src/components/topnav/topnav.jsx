@@ -1,6 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text,Button,Picker,Input,Image} from '@tarojs/components'
-import './topnav.scss'
+import styles from './topnav.module.scss'
+import { AtIcon } from 'taro-ui'
 
 export default class TopNav extends Component{
 
@@ -47,31 +48,31 @@ export default class TopNav extends Component{
     render(){
         return(
            
-                <View className="topnav-component">
-                    <View className={this.props.ishavedate==true?"content-component":"content-component-nodate"}>
-                        <View className="nagatortitle-component">
+                <View className={styles.topnavcomponent}>
+                    <View className={this.props.ishavedate==true?styles.contentcomponent:styles.contentcomponentnodate}>
+                       <View className={styles.nagatortitlecomponent}>
                                  {this.props.title}
                         </View>
-                        <View className="nagator-component">
-                            <View className="daohanwrrow-component">
-                               <View className={this.props.isdisplaynagator==true?"at-icon at-icon-chevron-left":"nagator-didden"} onClick={this.onNavigateBack}>
-
+                        <View className={styles.nagatorcomponent}>
+                            <View className={styles.daohanwrrowcomponent}>
+                               <View className={this.props.isdisplaynagator==true?styles.nagatornodhidden:styles.nagatordidden} onClick={this.onNavigateBack}>
+                                  <AtIcon value="chevron-left" size="33"></AtIcon>
                                </View>
                             </View>
                            
                         </View>
                        
-                        <View className={this.props.isdisplaydaydate==true?"day-view": "day-view-hidden"}>
-                                    <View className="day-view-content">
-                                        <View className="day-date-view" >
-                                            <View className="day-date">
+                        <View className={this.props.isdisplaydaydate==true?styles.dayview: styles.dayviewhidden}>
+                                    <View className={styles.dayviewcontent}>
+                                        <View className={styles.daydateview}>
+                                            <View className={styles.daydate}>
                                                 {this.props.date}
                                             </View>
-                                            <View className="mealtype">
+                                            <View className={styles.mealtype}>
                                                  {this.props.mealtype}
                                             </View>
                                         </View>
-                                        <View className="order-status">
+                                        <View className={styles.orderstatus}>
                                            {this.props.orderstatus}
                                         </View>
                                     </View>

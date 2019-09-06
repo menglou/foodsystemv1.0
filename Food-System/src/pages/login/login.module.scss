@@ -1,0 +1,167 @@
+.containerlogin{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 4;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+}
+
+.loginconetntbg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 160px;
+    //background-image: url("../../asset/image/login-bg.jpg")
+}
+.loginconetntbgimg{
+    width: 100%;
+    height: 100%;
+}
+.loginconetnt{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 160px;
+    z-index: 4;
+    //background-image: url("../../asset/image/login-bg.jpg")
+}
+
+
+.loginform{
+    margin: 0 5%;
+    padding-top: 40%;
+    padding-bottom: 2%;
+    width: 90%;
+    height: 58%;
+   
+}
+
+.forminput{
+    width: 100%;
+    height: 50%;
+    float: left;
+}
+
+.account{
+    width: 95%;
+    float: left;
+    height:80px;
+    background-color: #fff;
+    padding-left: 5%;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+.accounticon{
+    width: 9%;
+    float: left;
+    height:81px;
+    
+}
+.at-icon{
+    margin-top: -4px;
+}
+.accountinput{
+    width: 91%;
+    float: left;
+    height:81px;
+}
+.inputs{
+    height:81px;
+    font-size: 30px;
+}
+
+.pwd{
+    width: 95%;
+    float: left;
+    height:80px;
+    background-color: #fff;
+    padding-left: 5%;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.pwdicon{
+    width: 9%;
+    float: left;
+    height:82px;
+    
+}
+
+.pwdinput{
+    width: 91%;
+    float: left;
+    height:82px;
+}
+
+.modifypwd{
+    width: 94%;
+    float: left;
+    height:80px;
+    padding-left: 5%;
+    padding-right: 1%;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: right;
+    color: #fff;
+    font-size: 38px;
+}
+
+.loginbtnview{
+    width: 100%;
+    float: left;
+    margin-top: 30px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 42px;
+    background-color: #fb5554;
+    text-align: center;
+    border-radius: 15px;
+    color: #fff;
+    font-family: "微软雅黑"
+}
+
+.tiptitle{
+    width: 100%;
+    height: 30%;
+    float: left;
+    position: absolute;
+    bottom: 0;
+   
+}
+.contents{
+    width: 100%;
+    float: left;
+    height: 100px;
+    //margin-top: 50%;
+    position: relative;
+    top:70%
+}
+.onecntent{
+    width: 100%;
+    float: left;
+    height: 40px;
+    text-align: center;
+    font-size: 28px;
+}
+.phoneicon{
+    width: 100%;
+    float: left;
+    height: 40px;
+    color: #eee;
+}
+.twocntent{
+    width: 100%;
+    float: left;
+    height: 40px;
+    text-align: center;
+    font-size: 28px;
+    color: #eee;
+    margin-top: 20px;
+}

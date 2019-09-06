@@ -1,0 +1,112 @@
+.topnavcomponent{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.contentcomponent{
+width: 100%;
+height: 250px;
+background-color: #fb5554;
+margin: 0px auto;
+padding: 0px;
+text-align: left;
+}
+
+.contentcomponentnodate{
+    width: 100%;
+    height: 160px;
+    background-color: #fb5554;
+    margin: 0px auto;
+    padding: 0px;
+    text-align: left;
+    }
+
+.nagatorcomponent{
+width: 100%;
+float: left;
+height: 160px;
+position: absolute;
+top:0;
+left: 0;
+z-index: 2;
+}
+.daohanwrrowcomponent{
+width: 40%;
+float: left;
+height: 135px;
+color: #fff;
+font-size: 70px;
+padding-top: 25px;
+padding-left: 3%
+
+}
+.nagatortitlecomponent{
+width: 100%;
+float: left;
+height: 105px;
+position: absolute;
+top:0;
+left: 0;
+z-index: 1;
+text-align: center;
+padding-top: 55px;
+font-size: 38px;
+ color: #fff;
+}
+
+.nagatornodhidden{
+    width: 100%;
+    height: 135px;
+    float:left ;
+}
+.nagatordidden{
+    display: none
+}
+
+.dayview{
+ width: 100%;
+ float: left;
+ height: 82px;
+ background-color: #fb5554;
+ padding-top: 8px;
+ position: relative;
+ top: 160px;
+}
+.dayviewhidden{
+    display: none
+}
+
+.dayviewcontent{
+    width: 92%;
+    padding-left: 4%;
+    padding-right: 4%;
+    float: left;
+}
+.daydateview{
+    width: 70%;
+    float: left;
+}
+.daydate{
+    width: 60%;
+    float: left;
+    font-size: 33px;
+    color: #fff;
+}
+.mealtype{
+    width: 40%;
+    float: left;
+    font-size: 33px;
+    color: #fff;
+}
+.orderstatus{
+    width: 30%;
+    float: left;
+    font-size: 36px;
+    color: #fff;
+    text-align: right
+}
+
