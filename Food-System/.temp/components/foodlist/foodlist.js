@@ -11,7 +11,7 @@ import doujiang from "../../asset/food/10.jpg";
 import niunai from "../../asset/food/6.jpg";
 import jiangxiangbin from "../../asset/food/cp1.jpg";
 
-const foodlist = [{
+let foodlist = [{
   id: "1",
   image: shuijiao,
   name: "水饺",

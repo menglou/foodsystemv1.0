@@ -234,7 +234,7 @@ export default class OrderFood extends Component {
                               <Picker mode="date" onChange={this.onDateChange}  >
                                       <View className={styles.picker}>
                                         <View className={styles.calendariconview} >
-                                          <AtIcon value={styles.calendar} size="20" color="#fff"></AtIcon>
+                                          <AtIcon value="calendar" size="20" color="#fff"></AtIcon>
                                         </View>
                                         <View className={styles.datedisplayview}>
                                              <Input value={this.state.data} type="text" onFocus={this.onInputFoucs} className={styles.inputdate}></Input>

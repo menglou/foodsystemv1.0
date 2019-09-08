@@ -20,6 +20,9 @@ export default function manageruserinfo(state = INITIAL_STATE, action) {
       };
     case LOGINEXITS:
       //退出登录
+
+      state.userinfo = {};
+
       return {
         ...state,
         userinfo: state.userinfo

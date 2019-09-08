@@ -57,9 +57,14 @@ class Mine extends Component {
       case 'loginexits':
         Taro.showModal({
           title: '提示',
-          content: "暂未实现"
+          content: "确定退出吗?"
         }).then(re => {
-          if (re.confirm) {} else if (re.cancel) {}
+          if (re.confirm) {
+            this.props.loginexits();
+            if (Object.keys(this.props.manageruserinfo.userinfo).length === 0) {
+              Taro.redirectTo({ url: '../index/index' });
+            }
+          } else if (re.cancel) {}
         });
         break;
     }

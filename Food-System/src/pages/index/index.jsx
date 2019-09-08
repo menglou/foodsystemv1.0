@@ -78,18 +78,18 @@ export default class Index extends Component {
                    <View className={styles.nextrow}>
                         <View className={styles.nextrowone}>
                              <View className={styles.nextrowoneimae1} onClick={this.onredirectomymenu}>
-                                <Image className={styles.mymenu} src={mymenu} mode="scaleToFill"></Image>
+                                <Image className={styles.mymenu} src={mymenu} ></Image>
                              </View>
                              <View className={styles.nextrowoneimae2} onClick={this.onRedircto}>
-                                <Image className={styles.rules} src={rules} mode="scaleToFill"></Image>
+                                <Image className={styles.rules} src={rules}></Image>
                              </View>
                         </View>
                         <View className={styles.nextrowtwo} >
                              <View className={styles.nextrowtwoimae1} onClick={this.onredirecttonotice}>
-                                <Image className={styles.gonggao} src={gonggao} mode="scaleToFill"></Image>
+                                <Image className={styles.gonggao} src={gonggao} ></Image>
                              </View>
                              <View className={styles.nextrowtwoimae2} onClick={this.onredirecttomine}>
-                                <Image className={styles.mine} src={mine} mode="scaleToFill"></Image>
+                                <Image className={styles.mine} src={mine} ></Image>
                              </View>
                         </View>
                    </View>

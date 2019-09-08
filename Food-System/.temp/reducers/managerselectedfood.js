@@ -90,14 +90,17 @@ export default function managerselectedfood(state = INITIAL_STATE, action) {
       state.selectedfood.splice(0, state.selectedfood.length); //清除所有的已选择的
 
       //暂时这样写
+      // state.listfood.splice(0,state.listfood.length);
       state.listfood.forEach(item => {
+        // debugger;
         if (item.count > 0) {
-          item === 0;
+          item.count = 0;
         }
-        if (item.Isdisplay === true) {
+        if (item.Isdisplay == true) {
           item.Isdisplay = false;
         }
       });
+
       return {
         ...state,
         selectedfood: state.selectedfood, //已选择的菜单list集合
